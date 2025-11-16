@@ -517,6 +517,4 @@ logger.debug('Complex calculation result', expensiveCalculation());
 
 ## Related
 
-- [Error Middleware](../middlewares/error-middleware.md) - Error logging integration
-- [Request Context](./request-context.md) - Request-scoped logging
-- [Monitoring](../monitoring.md) - Application monitoring and metrics
+- [API Response](./api-response.md) - Response formatting

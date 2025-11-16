@@ -1195,7 +1195,6 @@ Add these npm scripts to `package.json`:
 
 ### 8.2 Debugging Utilities
 
-<CommandBlock>
 ```bash
 # Start application in debug mode
 npm run debug
@@ -1217,7 +1216,6 @@ node --inspect --expose-gc dist/main.js
 npm run dev -- --inspect=9229
 # Connect Chrome DevTools to localhost:9229
 ```
-</CommandBlock>
 
 ## What You've Mastered
 

@@ -5,7 +5,6 @@ description: Build your first Mifty API in 5 minutes - from project creation to 
 keywords: [mifty, quick start, tutorial, api, nodejs, typescript, database designer]
 ---
 
-import CommandBlock from '@site/src/components/CommandBlock';
 import ServiceTable from '@site/src/components/ServiceTable';
 
 # ⚡ 5-Minute Quick Start
@@ -20,10 +19,11 @@ Make sure you have [Mifty installed](./installation) before starting this tutori
 
 Let's create a blog API project to demonstrate Mifty's capabilities:
 
-<CommandBlock 
-  command="mifty init my-blog-api"
-  description="Create a new Mifty project"
-/>
+```bash
+mifty init my-blog-api
+```
+
+Create a new Mifty project
 
 **What just happened?**
 - ✅ Created complete TypeScript project structure
@@ -72,11 +72,12 @@ echo 'DATABASE_URL="postgresql://postgres:password@localhost:5432/mifty_dev"' > 
 
 Navigate to your project and install dependencies:
 
-<CommandBlock 
-  command="cd my-blog-api
-npm install"
-  description="Navigate to project and install dependencies"
-/>
+```bash
+cd my-blog-api
+npm install
+```
+
+Navigate to project and install dependencies
 
 **Expected output:**
 ```
@@ -89,10 +90,11 @@ npm install"
 
 Start all development tools with one command:
 
-<CommandBlock 
-  command="npm run dev:full"
-  description="Start the complete development environment"
-/>
+```bash
+npm run dev:full
+```
+
+Start the complete development environment
 
 **This starts:**
 - 🌐 **API Server** on port 3000
@@ -175,10 +177,11 @@ The visual designer provides real-time feedback and automatically generates the 
 
 Generate complete CRUD modules from your database design:
 
-<CommandBlock 
-  command="npm run generate"
-  description="Generate complete API modules from your database design"
-/>
+```bash
+npm run generate
+```
+
+Generate complete API modules from your database design
 
 **What gets generated:**
 - ✅ **User Module:** Complete CRUD operations
@@ -219,15 +222,16 @@ Your API is now ready! Let's test it:
 
 ### Test 1: Create a User
 
-<CommandBlock 
-  command='curl -X POST http://localhost:3000/api/v1/users \
+```bash
+curl -X POST http://localhost:3000/api/v1/users \
   -H "Content-Type: application/json" \
   -d "{
     \"email\": \"john@example.com\",
     \"name\": \"John Doe\"
-  }"'
-  description="Create your first user"
-/>
+  }"
+```
+
+Create your first user
 
 **Expected response:**
 ```json
@@ -241,31 +245,34 @@ Your API is now ready! Let's test it:
 
 ### Test 2: Get All Users
 
-<CommandBlock 
-  command="curl http://localhost:3000/api/v1/users"
-  description="Retrieve all users"
-/>
+```bash
+curl http://localhost:3000/api/v1/users
+```
+
+Retrieve all users
 
 ### Test 3: Create a Post
 
-<CommandBlock 
-  command='curl -X POST http://localhost:3000/api/v1/posts \
+```bash
+curl -X POST http://localhost:3000/api/v1/posts \
   -H "Content-Type: application/json" \
   -d "{
     \"title\": \"My First Blog Post\",
     \"content\": \"This is my first post using Mifty!\",
     \"authorId\": \"clp123abc456def789\",
     \"published\": true
-  }"'
-  description="Create your first blog post"
-/>
+  }"
+```
+
+Create your first blog post
 
 ### Test 4: Get Posts with Author
 
-<CommandBlock 
-  command="curl http://localhost:3000/api/v1/posts?include=author"
-  description="Get posts with author information"
-/>
+```bash
+curl http://localhost:3000/api/v1/posts?include=author
+```
+
+Get posts with author information
 
 :::success API Working!
 Congratulations! You've built a complete blog API with user management and posts in under 5 minutes! 🚀
@@ -284,10 +291,11 @@ Open Prisma Studio to browse your data visually:
 
 Your generated modules include comprehensive tests:
 
-<CommandBlock 
-  command="npm test"
-  description="Run the generated test suite"
-/>
+```bash
+npm test
+```
+
+Run the generated test suite
 
 **Test coverage includes:**
 - ✅ Unit tests for all services
@@ -318,10 +326,11 @@ Now that you have a working API, here are your next steps:
 #### 🔌 Add Authentication
 Install the auth adapter for user authentication:
 
-<CommandBlock 
-  command="npm run adapter install auth-service"
-  description="Add authentication to your API"
-/>
+```bash
+npm run adapter install auth-service
+```
+
+Add authentication to your API
 
 </div>
 
@@ -330,10 +339,11 @@ Install the auth adapter for user authentication:
 #### 📧 Add Email Service
 Install email capabilities:
 
-<CommandBlock 
-  command="npm run adapter install email-service"
-  description="Add email functionality"
-/>
+```bash
+npm run adapter install email-service
+```
+
+Add email functionality
 
 </div>
 
@@ -374,25 +384,25 @@ Follow this path to master Mifty:
 3. **[Code Generation](../framework/code-generation)** - Learn about auto-generation
 4. **[Adapters Guide](../adapters/)** - Add third-party integrations
 5. **[Testing Guide](../framework/testing)** - Write comprehensive tests
-6. **[Deployment](../tutorials/deployment)** - Deploy to production
+6. **[Production Commands](../commands/production-commands)** - Deploy to production
 
 ### 🎓 Tutorials
 
 Build real-world applications:
 
 - **[Blog API Tutorial](../tutorials/blog-api)** - Complete blog with authentication
-- **[E-commerce Backend](../tutorials/ecommerce)** - Shopping cart and payments
-- **[Real-time Chat](../tutorials/realtime-chat)** - WebSocket integration
-- **[File Upload Service](../tutorials/file-upload)** - Handle file uploads
+- **[E-commerce Backend](../tutorials/ecommerce-backend)** - Shopping cart and payments
+- **[Real-time Features](../tutorials/realtime-features)** - WebSocket integration
+- **[File Upload Service](../tutorials/file-upload-service)** - Handle file uploads
 
 ### 🔧 Advanced Topics
 
 When you're ready for more:
 
-- **[Custom Adapters](../adapters/custom-adapters)** - Build your own integrations
-- **[Performance Optimization](../troubleshooting/performance)** - Scale your API
-- **[Security Best Practices](../framework/security)** - Secure your application
-- **[Microservices](../tutorials/microservices)** - Build distributed systems
+- **[Adapters Guide](../adapters/)** - Build your own integrations
+- **[Performance Optimization](../troubleshooting/performance-optimization)** - Scale your API
+- **[Security Best Practices](../framework/)** - Secure your application
+- **[Testing Guide](../tutorials/testing-guide)** - Build comprehensive tests
 
 ## 💡 Pro Tips
 
@@ -406,8 +416,8 @@ When you're ready for more:
 
 - **📖 [Documentation](../framework/)** - Comprehensive guides
 - **🐛 [Troubleshooting](../troubleshooting/)** - Common issues and solutions
-- **💬 [Community](https://github.com/abhir22/miftyjs/discussions)** - Ask questions
-- **🎯 [Examples](../tutorials/)** - Real-world applications
+- **💬 [Community](https://github.com/abhir22/mifty-docs/discussions)** - Ask questions
+- **🎯 [Tutorials](../tutorials/blog-api)** - Real-world applications
 
 :::tip Keep Exploring!
 You've just scratched the surface of what Mifty can do. The visual designer, auto-generation, and rich ecosystem of adapters will accelerate your development like never before!
@@ -443,7 +453,7 @@ You've just scratched the surface of what Mifty can do. The visual designer, aut
 🔌 Explore Adapters
 </a>
 
-<a href="../tutorials/" style={{
+<a href="../tutorials/blog-api" style={{
   padding: '1rem 2rem',
   border: '2px solid var(--ifm-color-success)',
   color: 'var(--ifm-color-success)',

@@ -10,7 +10,7 @@ Welcome to the comprehensive documentation for **Mifty Framework** - the enterpr
 
 Mifty combines visual database design, automatic code generation, and clean architecture patterns to help you build robust APIs and microservices faster than ever before.
 
-### Key Features
+## Key Features
 
 - 🎨 **Visual Database Designer** - Design schemas with drag-and-drop UI
 - 🤖 **Auto Code Generation** - Generate complete CRUD modules and tests
@@ -55,8 +55,8 @@ This documentation is organized into several sections:
 ## Need Help?
 
 - 📖 Browse the documentation sections above
-- 🐛 [Report issues on GitHub](https://github.com/abhir22/mifty/issues)
-- 💬 [Join discussions](https://github.com/abhir22/mifty/discussions)
-- ⭐ [Star us on GitHub](https://github.com/abhir22/mifty) if you find Mifty useful!
+- 🐛 [Report issues on GitHub](https://github.com/abhir22/mifty-docs/issues)
+- 💬 [Join discussions](https://github.com/abhir22/mifty-docs/discussions)
+- ⭐ [Star us on GitHub](https://github.com/abhir22/mifty-docs) if you find Mifty useful!
 
 Ready to get started? Head over to the [Getting Started guide](./getting-started/what-is-mifty.md)!

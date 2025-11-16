@@ -484,6 +484,4 @@ for (const module of optionalModules) {
 ## Related
 
 - [App Class](./app.md) - Main application orchestration
-- [Module Configuration](../types/app-config.md) - Configuration interfaces
 - [Dependency Injection](../patterns/dependency-injection.md) - DI patterns
-- [Route Organization](../patterns/route-organization.md) - Route structure patterns

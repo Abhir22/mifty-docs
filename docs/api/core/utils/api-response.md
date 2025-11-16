@@ -508,5 +508,3 @@ return PaginatedResponse.paginated(
 ## Related
 
 - [BaseController](../base-controller.md) - Uses response utilities
-- [Error Middleware](../middlewares/error-middleware.md) - Error handling integration
-- [BaseResponse](../base/response/base-response.md) - Data transformation utilities

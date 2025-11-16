@@ -11,10 +11,11 @@ import CodeTabs from '@site/src/components/CodeTabs';
 
 #### Generate Prisma Client
 
-<CommandBlock 
-  command="npm run prisma:generate"
-  description="Generate Prisma Client from schema.prisma file"
-/>
+```bash
+npm run prisma:generate
+```
+
+Generate Prisma Client from schema.prisma file
 
 This command should be run after:
 - Changing the database schema
@@ -23,32 +24,37 @@ This command should be run after:
 
 #### Database Migrations
 
-<CommandBlock 
-  command="npm run prisma:migrate"
-  description="Create and apply a new database migration"
-/>
+```bash
+npm run prisma:migrate
+```
 
-<CommandBlock 
-  command="npm run prisma:migrate:status"
-  description="Check the status of database migrations"
-/>
+Create and apply a new database migration
 
-<CommandBlock 
-  command="npm run prisma:migrate:deploy"
-  description="Apply pending migrations in production"
-/>
+```bash
+npm run prisma:migrate:status
+```
 
-<CommandBlock 
-  command="npm run prisma:reset"
-  description="⚠️ Reset database and apply all migrations (DELETES ALL DATA)"
-/>
+Check the status of database migrations
+
+```bash
+npm run prisma:migrate:deploy
+```
+
+Apply pending migrations in production
+
+```bash
+npm run prisma:reset
+```
+
+⚠️ Reset database and apply all migrations (DELETES ALL DATA)
 
 #### Schema Push (Development Only)
 
-<CommandBlock 
-  command="npm run prisma:push"
-  description="Push schema changes directly to database without creating migration"
-/>
+```bash
+npm run prisma:push
+```
+
+Push schema changes directly to database without creating migration
 
 :::warning
 Use `prisma:push` only in development. For production, always use migrations.
@@ -58,10 +64,11 @@ Use `prisma:push` only in development. For production, always use migrations.
 
 #### Prisma Studio
 
-<CommandBlock 
-  command="npm run prisma:studio"
-  description="Open Prisma Studio database browser at http://localhost:5555"
-/>
+```bash
+npm run prisma:studio
+```
+
+Open Prisma Studio database browser at http://localhost:5555
 
 Prisma Studio provides:
 - Visual database browser
@@ -71,24 +78,27 @@ Prisma Studio provides:
 
 #### Database Seeding
 
-<CommandBlock 
-  command="npm run prisma:seed"
-  description="Run database seeding script to populate initial data"
-/>
+```bash
+npm run prisma:seed
+```
+
+Run database seeding script to populate initial data
 
 ## Database Designer Commands
 
 ### Visual Database Designer
 
-<CommandBlock 
-  command="npm run db-designer"
-  description="Start visual database designer UI at http://localhost:3001/ui"
-/>
+```bash
+npm run db-designer
+```
 
-<CommandBlock 
-  command="npm run db-designer:build"
-  description="Build project and start database designer"
-/>
+Start visual database designer UI at http://localhost:3001/ui
+
+```bash
+npm run db-designer:build
+```
+
+Build project and start database designer
 
 The database designer provides:
 - Visual schema design
@@ -195,30 +205,34 @@ graph TD
    - Or edit `src/db.design.ts` manually
 
 2. **Generate Modules**
-   <CommandBlock 
-     command="npm run generate"
-     description="Generate TypeScript modules from schema"
-   />
+   ```bash
+npm run generate
+```
+
+Generate TypeScript modules from schema
 
 3. **Create Migration**
-   <CommandBlock 
-     command="npm run prisma:migrate"
-     description="Create and apply migration"
-   />
+   ```bash
+npm run prisma:migrate
+```
+
+Create and apply migration
    
    You'll be prompted to name your migration (e.g., "add_user_table")
 
 4. **Generate Prisma Client**
-   <CommandBlock 
-     command="npm run prisma:generate"
-     description="Update Prisma Client with new schema"
-   />
+   ```bash
+npm run prisma:generate
+```
+
+Update Prisma Client with new schema
 
 5. **Verify Changes**
-   <CommandBlock 
-     command="npm run prisma:studio"
-     description="Open Prisma Studio to verify schema"
-   />
+   ```bash
+npm run prisma:studio
+```
+
+Open Prisma Studio to verify schema
 
 ### Production Migration Workflow
 
@@ -235,22 +249,25 @@ graph TD
 #### Production Migration Steps
 
 1. **Check Migration Status**
-   <CommandBlock 
-     command="npm run prisma:migrate:status"
-     description="Check which migrations need to be applied"
-   />
+   ```bash
+npm run prisma:migrate:status
+```
+
+Check which migrations need to be applied
 
 2. **Deploy Migrations**
-   <CommandBlock 
-     command="npm run prisma:migrate:deploy"
-     description="Apply all pending migrations"
-   />
+   ```bash
+npm run prisma:migrate:deploy
+```
+
+Apply all pending migrations
 
 3. **Generate Client**
-   <CommandBlock 
-     command="npm run prisma:generate"
-     description="Generate Prisma Client in production"
-   />
+   ```bash
+npm run prisma:generate
+```
+
+Generate Prisma Client in production
 
 ## Database Troubleshooting
 
@@ -261,10 +278,11 @@ graph TD
 **Problem**: Migration conflicts when working in a team
 
 **Solution**:
-<CommandBlock 
-  command="npm run prisma:migrate:status"
-  description="Check migration status and resolve conflicts"
-/>
+```bash
+npm run prisma:migrate:status
+```
+
+Check migration status and resolve conflicts
 
 If conflicts exist:
 1. Pull latest changes from repository
@@ -276,10 +294,11 @@ If conflicts exist:
 **Problem**: Prisma Client doesn't match database schema
 
 **Solution**:
-<CommandBlock 
-  command="npm run prisma:generate"
-  description="Regenerate Prisma Client"
-/>
+```bash
+npm run prisma:generate
+```
+
+Regenerate Prisma Client
 
 #### Database Connection Issues
 
@@ -288,38 +307,43 @@ If conflicts exist:
 **Solutions**:
 
 1. **Check Database URL**:
-   <CommandBlock 
-     command="npm run services:config"
-     description="View current database configuration"
-   />
+   ```bash
+npm run services:config
+```
+
+View current database configuration
 
 2. **Test Connection**:
-   <CommandBlock 
-     command="npm run prisma:studio"
-     description="Try to open Prisma Studio to test connection"
-   />
+   ```bash
+npm run prisma:studio
+```
+
+Try to open Prisma Studio to test connection
 
 3. **Reset Database** (development only):
-   <CommandBlock 
-     command="npm run prisma:reset"
-     description="Reset database and start fresh"
-   />
+   ```bash
+npm run prisma:reset
+```
+
+Reset database and start fresh
 
 #### Schema Drift
 
 **Problem**: Database schema doesn't match Prisma schema
 
 **Solution**:
-<CommandBlock 
-  command="npm run prisma:push"
-  description="Push schema changes to sync database (development only)"
-/>
+```bash
+npm run prisma:push
+```
+
+Push schema changes to sync database (development only)
 
 For production, create proper migrations:
-<CommandBlock 
-  command="npm run prisma:migrate"
-  description="Create migration to fix schema drift"
-/>
+```bash
+npm run prisma:migrate
+```
+
+Create migration to fix schema drift
 
 ### Database Provider Specific Issues
 
@@ -372,42 +396,48 @@ CREATE DATABASE your_database_name;
 
 You can run custom Prisma commands using npx:
 
-<CommandBlock 
-  command="npx prisma db pull"
-  description="Pull schema from existing database"
-/>
+```bash
+npx prisma db pull
+```
 
-<CommandBlock 
-  command="npx prisma db seed"
-  description="Run custom seed script"
-/>
+Pull schema from existing database
 
-<CommandBlock 
-  command="npx prisma format"
-  description="Format Prisma schema file"
-/>
+```bash
+npx prisma db seed
+```
+
+Run custom seed script
+
+```bash
+npx prisma format
+```
+
+Format Prisma schema file
 
 ### Database Inspection
 
-<CommandBlock 
-  command="npx prisma db execute --file ./script.sql"
-  description="Execute custom SQL script"
-/>
+```bash
+npx prisma db execute --file ./script.sql
+```
 
-<CommandBlock 
-  command="npx prisma validate"
-  description="Validate Prisma schema"
-/>
+Execute custom SQL script
+
+```bash
+npx prisma validate
+```
+
+Validate Prisma schema
 
 ## Database Performance Optimization
 
 ### Query Optimization
 
 1. **Use Prisma Studio** to analyze queries:
-   <CommandBlock 
-     command="npm run prisma:studio"
-     description="Open Prisma Studio for query analysis"
-   />
+   ```bash
+npm run prisma:studio
+```
+
+Open Prisma Studio for query analysis
 
 2. **Enable Query Logging** in development:
    ```typescript
@@ -433,10 +463,11 @@ model User {
 ```
 
 After adding indexes:
-<CommandBlock 
-  command="npm run prisma:migrate"
-  description="Create migration with new indexes"
-/>
+```bash
+npm run prisma:migrate
+```
+
+Create migration with new indexes
 
 ## Database Backup and Restore
 
@@ -472,16 +503,18 @@ cp ./prisma/dev.db ./backup/dev-backup-$(date +%Y%m%d).db
    ```
 
 2. **Run Tests with Test Database**:
-   <CommandBlock 
-     command="NODE_ENV=test npm test"
-     description="Run tests with test database"
-   />
+   ```bash
+NODE_ENV=test npm test
+```
+
+Run tests with test database
 
 3. **Reset Test Database**:
-   <CommandBlock 
-     command="NODE_ENV=test npm run prisma:reset"
-     description="Reset test database"
-   />
+   ```bash
+NODE_ENV=test npm run prisma:reset
+```
+
+Reset test database
 
 ## Database Monitoring
 
@@ -510,10 +543,11 @@ prisma.$on('query', (e) => {
 
 Monitor database connections:
 
-<CommandBlock 
-  command="npm run monitor"
-  description="Start error monitor to track database issues"
-/>
+```bash
+npm run monitor
+```
+
+Start error monitor to track database issues
 
 ## Best Practices
 

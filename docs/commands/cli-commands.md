@@ -2,309 +2,307 @@
 
 Complete reference for all Mifty CLI commands and npm scripts.
 
-import CommandBlock from '@site/src/components/CommandBlock';
-
 ## Project Initialization
 
 ### Create New Project
 
-<CommandBlock 
-  command="mifty init my-api"
-  description="Initialize a new Mifty project with the specified name"
-/>
+```bash
+mifty init my-api
+```
+Initialize a new Mifty project with the specified name
 
-<CommandBlock 
-  command="cd my-api"
-  description="Navigate to the newly created project directory"
-/>
+```bash
+cd my-api
+```
+Navigate to the newly created project directory
 
-<CommandBlock 
-  command="npm run dev"
-  description="Start the development server"
-/>
+```bash
+npm run dev
+```
+Start the development server
 
 ## Development Commands
 
 ### Start Development Server
 
-<CommandBlock 
-  command="npm run dev"
-  description="Start API server with hot reload"
-/>
+```bash
+npm run dev
+```
+Start API server with hot reload
 
-<CommandBlock 
-  command="npm run dev:full"
-  description="Start API + DB Designer + Monitor + Prisma Studio"
-/>
+```bash
+npm run dev:full
+```
+Start API + DB Designer + Monitor + Prisma Studio
 
-<CommandBlock 
-  command="npm run dev:server"
-  description="Start API server only"
-/>
+```bash
+npm run dev:server
+```
+Start API server only
 
-<CommandBlock 
-  command="npm run dev:monitor"
-  description="Start error monitor only"
-/>
+```bash
+npm run dev:monitor
+```
+Start error monitor only
 
-<CommandBlock 
-  command="npm run dev:db-designer"
-  description="Start DB Designer only (port 3001)"
-/>
+```bash
+npm run dev:db-designer
+```
+Start DB Designer only (port 3001)
 
 ### Database Designer
 
-<CommandBlock 
-  command="npm run db-designer"
-  description="Start DB Designer UI at http://localhost:3001/ui"
-/>
+```bash
+npm run db-designer
+```
+Start DB Designer UI at http://localhost:3001/ui
 
 ## Build & Production
 
 ### Build Commands
 
-<CommandBlock 
-  command="npm run build"
-  description="Build TypeScript to JavaScript for production"
-/>
+```bash
+npm run build
+```
+Build TypeScript to JavaScript for production
 
-<CommandBlock 
-  command="npm run build:watch"
-  description="Watch mode - rebuild automatically on file changes"
-/>
+```bash
+npm run build:watch
+```
+Watch mode - rebuild automatically on file changes
 
 ### Production Server
 
-<CommandBlock 
-  command="npm start"
-  description="Start production server (requires build first)"
-/>
+```bash
+npm start
+```
+Start production server (requires build first)
 
 ## Database Commands (Prisma)
 
 ### Schema Management
 
-<CommandBlock 
-  command="npm run prisma:generate"
-  description="Generate Prisma Client from schema"
-/>
+```bash
+npm run prisma:generate
+```
+Generate Prisma Client from schema
 
-<CommandBlock 
-  command="npm run prisma:migrate"
-  description="Create and apply database migration"
-/>
+```bash
+npm run prisma:migrate
+```
+Create and apply database migration
 
-<CommandBlock 
-  command="npm run prisma:push"
-  description="Push schema changes without creating migration"
-/>
+```bash
+npm run prisma:push
+```
+Push schema changes without creating migration
 
-<CommandBlock 
-  command="npm run prisma:reset"
-  description="⚠️ Reset database (DELETES ALL DATA)"
-/>
+```bash
+npm run prisma:reset
+```
+⚠️ Reset database (DELETES ALL DATA)
 
 ### Database Tools
 
-<CommandBlock 
-  command="npm run prisma:studio"
-  description="Open Prisma Studio at http://localhost:5555"
-/>
+```bash
+npm run prisma:studio
+```
+Open Prisma Studio at http://localhost:5555
 
 ## Module Generation
 
 ### Generate Modules
 
-<CommandBlock 
-  command="npm run generate"
-  description="Generate all modules from db.design.ts"
-/>
+```bash
+npm run generate
+```
+Generate all modules from db.design.ts
 
-<CommandBlock 
-  command="npm run generate:module <name>"
-  description="Generate a specific module by name"
-/>
+```bash
+npm run generate:module <name>
+```
+Generate a specific module by name
 
 ## Testing Commands
 
 ### Run Tests
 
-<CommandBlock 
-  command="npm test"
-  description="Run all tests with coverage report"
-/>
+```bash
+npm test
+```
+Run all tests with coverage report
 
-<CommandBlock 
-  command="npm run test:watch"
-  description="Run tests in watch mode (re-run on changes)"
-/>
+```bash
+npm run test:watch
+```
+Run tests in watch mode (re-run on changes)
 
-<CommandBlock 
-  command="npm run test:coverage"
-  description="Run tests with detailed coverage report"
-/>
+```bash
+npm run test:coverage
+```
+Run tests with detailed coverage report
 
 ## Error Monitoring
 
 ### Monitor Commands
 
-<CommandBlock 
-  command="npm run monitor"
-  description="Start error monitor for debugging"
-/>
+```bash
+npm run monitor
+```
+Start error monitor for debugging
 
-<CommandBlock 
-  command="npm run monitor:autofix"
-  description="Monitor with automatic error fixing enabled"
-/>
+```bash
+npm run monitor:autofix
+```
+Monitor with automatic error fixing enabled
 
-<CommandBlock 
-  command="npm run watch:imports"
-  description="Watch and report import issues"
-/>
+```bash
+npm run watch:imports
+```
+Watch and report import issues
 
 ## Code Quality
 
 ### Linting
 
-<CommandBlock 
-  command="npm run lint"
-  description="Run ESLint to check code quality"
-/>
+```bash
+npm run lint
+```
+Run ESLint to check code quality
 
-<CommandBlock 
-  command="npm run lint:fix"
-  description="Run ESLint with automatic fixes"
-/>
+```bash
+npm run lint:fix
+```
+Run ESLint with automatic fixes
 
 ### Formatting
 
-<CommandBlock 
-  command="npm run format"
-  description="Format code with Prettier"
-/>
+```bash
+npm run format
+```
+Format code with Prettier
 
 ## Adapter Management
 
 ### List Adapters
 
-<CommandBlock 
-  command="npm run adapter list"
-  description="List all available adapters"
-/>
+```bash
+npm run adapter list
+```
+List all available adapters
 
-<CommandBlock 
-  command="npm run adapter installed"
-  description="Show currently installed adapters"
-/>
+```bash
+npm run adapter installed
+```
+Show currently installed adapters
 
 ### Install/Uninstall Adapters
 
-<CommandBlock 
-  command="npm run adapter install <name>"
-  description="Install a specific adapter"
-/>
+```bash
+npm run adapter install <name>
+```
+Install a specific adapter
 
-<CommandBlock 
-  command="npm run adapter uninstall <name>"
-  description="Uninstall a specific adapter"
-/>
+```bash
+npm run adapter uninstall <name>
+```
+Uninstall a specific adapter
 
 ## Service Adapters
 
 ### Email Services
 
-<CommandBlock 
-  command="npm run adapter install email-service"
-  description="Install email service adapter (Gmail/SMTP)"
-/>
+```bash
+npm run adapter install email-service
+```
+Install email service adapter (Gmail/SMTP)
 
 ### Storage Services
 
-<CommandBlock 
-  command="npm run adapter install storage-service"
-  description="Install storage adapter (S3/Local/Cloudinary)"
-/>
+```bash
+npm run adapter install storage-service
+```
+Install storage adapter (S3/Local/Cloudinary)
 
 ### Payment Processing
 
-<CommandBlock 
-  command="npm run adapter install stripe"
-  description="Install Stripe payment processing adapter"
-/>
+```bash
+npm run adapter install stripe
+```
+Install Stripe payment processing adapter
 
 ### Communication Services
 
-<CommandBlock 
-  command="npm run adapter install twilio"
-  description="Install Twilio SMS service adapter"
-/>
+```bash
+npm run adapter install twilio
+```
+Install Twilio SMS service adapter
 
 ### Caching
 
-<CommandBlock 
-  command="npm run adapter install redis"
-  description="Install Redis caching adapter"
-/>
+```bash
+npm run adapter install redis
+```
+Install Redis caching adapter
 
 ### AI Services
 
-<CommandBlock 
-  command="npm run adapter install openai"
-  description="Install OpenAI API adapter"
-/>
+```bash
+npm run adapter install openai
+```
+Install OpenAI API adapter
 
 ## Authentication Adapters
 
 ### List Auth Adapters
 
-<CommandBlock 
-  command="npm run auth:list"
-  description="List all available authentication adapters"
-/>
+```bash
+npm run auth:list
+```
+List all available authentication adapters
 
 ### OAuth Providers
 
-<CommandBlock 
-  command="npm run auth:install auth-github"
-  description="Install GitHub OAuth authentication"
-/>
+```bash
+npm run auth:install auth-github
+```
+Install GitHub OAuth authentication
 
-<CommandBlock 
-  command="npm run auth:install auth-google"
-  description="Install Google OAuth authentication"
-/>
+```bash
+npm run auth:install auth-google
+```
+Install Google OAuth authentication
 
-<CommandBlock 
-  command="npm run auth:install auth-linkedin"
-  description="Install LinkedIn OAuth authentication"
-/>
+```bash
+npm run auth:install auth-linkedin
+```
+Install LinkedIn OAuth authentication
 
-<CommandBlock 
-  command="npm run auth:install auth-facebook"
-  description="Install Facebook OAuth authentication"
-/>
+```bash
+npm run auth:install auth-facebook
+```
+Install Facebook OAuth authentication
 
 ### OTP Authentication
 
-<CommandBlock 
-  command="npm run auth:install auth-email-otp"
-  description="Install Email OTP authentication"
-/>
+```bash
+npm run auth:install auth-email-otp
+```
+Install Email OTP authentication
 
-<CommandBlock 
-  command="npm run auth:install auth-mobile-otp"
-  description="Install Mobile OTP authentication"
-/>
+```bash
+npm run auth:install auth-mobile-otp
+```
+Install Mobile OTP authentication
 
 ## Configuration
 
 ### View Configuration
 
-<CommandBlock 
-  command="npm run services:config"
-  description="View current services configuration"
-/>
+```bash
+npm run services:config
+```
+View current services configuration
 
 ## Service URLs
 

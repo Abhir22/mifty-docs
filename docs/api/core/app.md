@@ -185,6 +185,5 @@ startServer().catch(console.error);
 
 ## Related
 
-- [AppConfig Types](../types/app-config.md)
 - [Loaders](./loaders.md)
 - [BaseController](./base-controller.md)

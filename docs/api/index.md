@@ -32,7 +32,7 @@ The Mifty framework is built around several core modules that provide the founda
 
 **Controllers & Routing**
 - [BaseController](./core/base-controller.md)
-- [Route Loading](./core/loaders.md#route-loading)
+- [Route Loading](./core/loaders.md#route-loader-routests)
 
 **Services & Business Logic**
 - [BaseService](./core/base-service.md)

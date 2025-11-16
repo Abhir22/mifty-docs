@@ -2,16 +2,14 @@
 
 Essential commands for building, deploying, and managing Mifty applications in production.
 
-import CommandBlock from '@site/src/components/CommandBlock';
-
 ## Build Commands
 
 ### Standard Build
 
-<CommandBlock 
-  command="npm run build"
-  description="Build TypeScript to JavaScript for production"
-/>
+```bash
+npm run build
+```
+Build TypeScript to JavaScript for production
 
 This command:
 - Compiles TypeScript to JavaScript
@@ -21,10 +19,10 @@ This command:
 
 ### Watch Build
 
-<CommandBlock 
-  command="npm run build:watch"
-  description="Build in watch mode - rebuilds on file changes"
-/>
+```bash
+npm run build:watch
+```
+Build in watch mode - rebuilds on file changes
 
 Use during development when you need to test the built version.
 
@@ -32,10 +30,10 @@ Use during development when you need to test the built version.
 
 ### Start Production Server
 
-<CommandBlock 
-  command="npm start"
-  description="Start production server (requires build first)"
-/>
+```bash
+npm start
+```
+Start production server (requires build first)
 
 :::warning Prerequisites
 Ensure you have run `npm run build` before starting the production server.
@@ -54,31 +52,31 @@ npm start
 
 ### Migration Deployment
 
-<CommandBlock 
-  command="npm run prisma:migrate:deploy"
-  description="Apply all pending migrations in production"
-/>
+```bash
+npm run prisma:migrate:deploy
+```
+Apply all pending migrations in production
 
-<CommandBlock 
-  command="npm run prisma:migrate:status"
-  description="Check migration status before deployment"
-/>
+```bash
+npm run prisma:migrate:status
+```
+Check migration status before deployment
 
 ### Prisma Client Generation
 
-<CommandBlock 
-  command="npm run prisma:generate"
-  description="Generate Prisma Client for production"
-/>
+```bash
+npm run prisma:generate
+```
+Generate Prisma Client for production
 
 ## Advanced Build Commands
 
 ### Secure Build (Enterprise)
 
-<CommandBlock 
-  command="npm run secure-build"
-  description="Build with security features: bundling, obfuscation, and byte-compilation"
-/>
+```bash
+npm run secure-build
+```
+Build with security features: bundling, obfuscation, and byte-compilation
 
 This command performs:
 1. Standard TypeScript build
@@ -90,68 +88,68 @@ This command performs:
 
 ### Individual Bundle Commands
 
-<CommandBlock 
-  command="npm run bundle"
-  description="Bundle all CLI executables"
-/>
+```bash
+npm run bundle
+```
+Bundle all CLI executables
 
-<CommandBlock 
-  command="npm run bundle:mifty"
-  description="Bundle main Mifty CLI executable"
-/>
+```bash
+npm run bundle:mifty
+```
+Bundle main Mifty CLI executable
 
-<CommandBlock 
-  command="npm run bundle:generate"
-  description="Bundle code generation executable"
-/>
+```bash
+npm run bundle:generate
+```
+Bundle code generation executable
 
-<CommandBlock 
-  command="npm run bundle:dbdesigner"
-  description="Bundle database designer executable"
-/>
+```bash
+npm run bundle:dbdesigner
+```
+Bundle database designer executable
 
-<CommandBlock 
-  command="npm run bundle:monitor"
-  description="Bundle error monitor executable"
-/>
+```bash
+npm run bundle:monitor
+```
+Bundle error monitor executable
 
-<CommandBlock 
-  command="npm run bundle:adapter"
-  description="Bundle adapter management executable"
-/>
+```bash
+npm run bundle:adapter
+```
+Bundle adapter management executable
 
 ### Security Commands
 
-<CommandBlock 
-  command="npm run obfuscate"
-  description="Obfuscate JavaScript code for security"
-/>
+```bash
+npm run obfuscate
+```
+Obfuscate JavaScript code for security
 
-<CommandBlock 
-  command="npm run byte-compile"
-  description="Compile JavaScript to bytecode"
-/>
+```bash
+npm run byte-compile
+```
+Compile JavaScript to bytecode
 
 ## Packaging Commands
 
 ### NPM Package
 
-<CommandBlock 
-  command="npm run pack"
-  description="Create NPM package (.tgz file)"
-/>
+```bash
+npm run pack
+```
+Create NPM package (.tgz file)
 
 ### Platform-Specific Executables
 
-<CommandBlock 
-  command="npm run pkg:all"
-  description="Create executables for all platforms (Linux, Windows, macOS)"
-/>
+```bash
+npm run pkg:all
+```
+Create executables for all platforms (Linux, Windows, macOS)
 
-<CommandBlock 
-  command="npm run pkg:test:linux"
-  description="Create Linux executable for testing"
-/>
+```bash
+npm run pkg:test:linux
+```
+Create Linux executable for testing
 
 ## Production Environment Setup
 
@@ -187,10 +185,10 @@ REDIS_URL=redis://localhost:6379
 
 ### Database Configuration
 
-<CommandBlock 
-  command="npm run services:config"
-  description="View current production configuration"
-/>
+```bash
+npm run services:config
+```
+View current production configuration
 
 ## Deployment Workflows
 
@@ -209,28 +207,28 @@ graph TD
 #### Step-by-Step Deployment
 
 1. **Quality Assurance**
-   <CommandBlock 
-     command="npm run lint && npm test"
-     description="Ensure code quality and all tests pass"
-   />
+   ```bash
+npm run lint && npm test
+```
+Ensure code quality and all tests pass
 
 2. **Build Application**
-   <CommandBlock 
-     command="npm run build"
-     description="Build for production"
-   />
+   ```bash
+npm run build
+```
+Build for production
 
 3. **Database Migration**
-   <CommandBlock 
-     command="npm run prisma:migrate:deploy"
-     description="Apply database migrations"
-   />
+   ```bash
+npm run prisma:migrate:deploy
+```
+Apply database migrations
 
 4. **Start Production Server**
-   <CommandBlock 
-     command="npm start"
-     description="Start production server"
-   />
+   ```bash
+npm start
+```
+Start production server
 
 5. **Health Check**
    ```bash
@@ -242,16 +240,16 @@ graph TD
 For enhanced security in enterprise environments:
 
 1. **Secure Build**
-   <CommandBlock 
-     command="npm run secure-build"
-     description="Build with security features"
-   />
+   ```bash
+npm run secure-build
+```
+Build with security features
 
 2. **Create Executables**
-   <CommandBlock 
-     command="npm run pkg:all"
-     description="Create platform-specific executables"
-   />
+   ```bash
+npm run pkg:all
+```
+Create platform-specific executables
 
 3. **Deploy Executables**
    - Copy executables to production servers
@@ -285,10 +283,10 @@ For enhanced security in enterprise environments:
    ```
 
 3. **Start with PM2**
-   <CommandBlock 
-     command="pm2 start ecosystem.config.js"
-     description="Start application with PM2"
-   />
+   ```bash
+pm2 start ecosystem.config.js
+```
+Start application with PM2
 
 4. **PM2 Management Commands**
    ```bash
@@ -321,19 +319,19 @@ For enhanced security in enterprise environments:
    ```
 
 2. **Enable and Start Service**
-   <CommandBlock 
-     command="sudo systemctl enable mifty-app && sudo systemctl start mifty-app"
-     description="Enable and start systemd service"
-   />
+   ```bash
+sudo systemctl enable mifty-app && sudo systemctl start mifty-app
+```
+Enable and start systemd service
 
 ## Monitoring and Logging
 
 ### Application Monitoring
 
-<CommandBlock 
-  command="npm run monitor"
-  description="Start production error monitoring"
-/>
+```bash
+npm run monitor
+```
+Start production error monitoring
 
 ### Log Management
 
@@ -370,10 +368,10 @@ const logger = winston.createLogger({
    ```
 
 2. **Use Secure Build for Better Performance**
-   <CommandBlock 
-     command="npm run secure-build"
-     description="Optimized build with bundling and compression"
-   />
+   ```bash
+npm run secure-build
+```
+Optimized build with bundling and compression
 
 ### Runtime Optimization
 
@@ -399,10 +397,10 @@ const logger = winston.createLogger({
    - Enable HTTPS in production
 
 2. **Code Security**
-   <CommandBlock 
-     command="npm run secure-build"
-     description="Use obfuscated build for enhanced security"
-   />
+   ```bash
+npm run secure-build
+```
+Use obfuscated build for enhanced security
 
 3. **Database Security**
    - Use production database with proper access controls
@@ -423,10 +421,10 @@ const logger = winston.createLogger({
 **Problem**: TypeScript compilation errors
 
 **Solution**:
-<CommandBlock 
-  command="npm run lint:fix && npm run build"
-  description="Fix linting issues and rebuild"
-/>
+```bash
+npm run lint:fix && npm run build
+```
+Fix linting issues and rebuild
 
 #### Database Connection Issues
 
@@ -472,19 +470,19 @@ app.get('/health', (req, res) => {
 ```
 
 Test health check:
-<CommandBlock 
-  command="curl http://localhost:3000/health"
-  description="Check application health"
-/>
+```bash
+curl http://localhost:3000/health
+```
+Check application health
 
 ## Backup and Recovery
 
 ### Database Backup
 
-<CommandBlock 
-  command="pg_dump production_db > backup-$(date +%Y%m%d).sql"
-  description="Create database backup (PostgreSQL)"
-/>
+```bash
+pg_dump production_db > backup-$(date +%Y%m%d).sql
+```
+Create database backup (PostgreSQL)
 
 ### Application Backup
 

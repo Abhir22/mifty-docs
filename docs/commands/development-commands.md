@@ -2,149 +2,147 @@
 
 Essential commands for daily development workflow with Mifty framework.
 
-import CommandBlock from '@site/src/components/CommandBlock';
-
 ## Quick Start Commands
 
 ### Start Development Environment
 
-<CommandBlock 
-  command="npm run dev"
-  description="Start API server with hot reload"
-/>
+```bash
+npm run dev
+```
+Start API server with hot reload
 
-<CommandBlock 
-  command="npm run dev:full"
-  description="Start complete development environment (API + DB Designer + Monitor + Prisma Studio)"
-/>
+```bash
+npm run dev:full
+```
+Start complete development environment (API + DB Designer + Monitor + Prisma Studio)
 
 ### Individual Services
 
-<CommandBlock 
-  command="npm run dev:server"
-  description="Start only the API server"
-/>
+```bash
+npm run dev:server
+```
+Start only the API server
 
-<CommandBlock 
-  command="npm run dev:db-designer"
-  description="Start database designer UI on port 3001"
-/>
+```bash
+npm run dev:db-designer
+```
+Start database designer UI on port 3001
 
-<CommandBlock 
-  command="npm run dev:monitor"
-  description="Start error monitor with auto-fix"
-/>
+```bash
+npm run dev:monitor
+```
+Start error monitor with auto-fix
 
 ## Database Development
 
 ### Visual Database Design
 
-<CommandBlock 
-  command="npm run db-designer"
-  description="Launch visual database designer at http://localhost:3001/ui"
-/>
+```bash
+npm run db-designer
+```
+Launch visual database designer at http://localhost:3001/ui
 
 ### Schema Management
 
-<CommandBlock 
-  command="npm run prisma:generate"
-  description="Generate Prisma Client after schema changes"
-/>
+```bash
+npm run prisma:generate
+```
+Generate Prisma Client after schema changes
 
-<CommandBlock 
-  command="npm run prisma:migrate"
-  description="Create and apply database migration"
-/>
+```bash
+npm run prisma:migrate
+```
+Create and apply database migration
 
-<CommandBlock 
-  command="npm run prisma:studio"
-  description="Open Prisma Studio for database browsing"
-/>
+```bash
+npm run prisma:studio
+```
+Open Prisma Studio for database browsing
 
-<CommandBlock 
-  command="npm run prisma:push"
-  description="Push schema changes without migration (development only)"
-/>
+```bash
+npm run prisma:push
+```
+Push schema changes without migration (development only)
 
 ## Code Generation
 
 ### Module Generation
 
-<CommandBlock 
-  command="npm run generate"
-  description="Generate all modules from database design"
-/>
+```bash
+npm run generate
+```
+Generate all modules from database design
 
-<CommandBlock 
-  command="npm run generate:module"
-  description="Generate specific module"
-/>
+```bash
+npm run generate:module
+```
+Generate specific module
 
 ## Testing During Development
 
 ### Continuous Testing
 
-<CommandBlock 
-  command="npm run test:watch"
-  description="Run tests in watch mode - reruns on file changes"
-/>
+```bash
+npm run test:watch
+```
+Run tests in watch mode - reruns on file changes
 
-<CommandBlock 
-  command="npm test"
-  description="Run full test suite with coverage"
-/>
+```bash
+npm test
+```
+Run full test suite with coverage
 
 ## Code Quality
 
 ### Linting and Formatting
 
-<CommandBlock 
-  command="npm run lint"
-  description="Check code quality with ESLint"
-/>
+```bash
+npm run lint
+```
+Check code quality with ESLint
 
-<CommandBlock 
-  command="npm run lint:fix"
-  description="Auto-fix linting issues"
-/>
+```bash
+npm run lint:fix
+```
+Auto-fix linting issues
 
-<CommandBlock 
-  command="npm run format"
-  description="Format code with Prettier"
-/>
+```bash
+npm run format
+```
+Format code with Prettier
 
 ## Error Monitoring and Debugging
 
 ### Error Monitoring
 
-<CommandBlock 
-  command="npm run monitor"
-  description="Start error monitoring system"
-/>
+```bash
+npm run monitor
+```
+Start error monitoring system
 
-<CommandBlock 
-  command="npm run monitor:autofix"
-  description="Monitor with automatic error fixing"
-/>
+```bash
+npm run monitor:autofix
+```
+Monitor with automatic error fixing
 
-<CommandBlock 
-  command="npm run watch:imports"
-  description="Watch for import issues and report them"
-/>
+```bash
+npm run watch:imports
+```
+Watch for import issues and report them
 
 ## Build Commands
 
 ### Development Build
 
-<CommandBlock 
-  command="npm run build"
-  description="Build TypeScript to JavaScript"
-/>
+```bash
+npm run build
+```
+Build TypeScript to JavaScript
 
-<CommandBlock 
-  command="npm run build:watch"
-  description="Build in watch mode - rebuilds on changes"
-/>
+```bash
+npm run build:watch
+```
+Build in watch mode - rebuilds on changes
 
 ## Development Workflows
 
@@ -267,10 +265,10 @@ JWT_SECRET=your-jwt-secret-here
 
 ### Check Current Configuration
 
-<CommandBlock 
-  command="npm run services:config"
-  description="View current services configuration"
-/>
+```bash
+npm run services:config
+```
+View current services configuration
 
 ## Troubleshooting Development Issues
 
@@ -302,22 +300,22 @@ JWT_SECRET=your-jwt-secret-here
 
 **Solutions**:
 1. Check database URL:
-   <CommandBlock 
-     command="npm run services:config"
-     description="Verify database configuration"
-   />
+   ```bash
+npm run services:config
+```
+Verify database configuration
 
 2. Reset database:
-   <CommandBlock 
-     command="npm run prisma:reset"
-     description="⚠️ Reset database (deletes all data)"
-   />
+   ```bash
+npm run prisma:reset
+```
+⚠️ Reset database (deletes all data)
 
 3. Generate Prisma Client:
-   <CommandBlock 
-     command="npm run prisma:generate"
-     description="Regenerate Prisma Client"
-   />
+   ```bash
+npm run prisma:generate
+```
+Regenerate Prisma Client
 
 #### Hot Reload Not Working
 
@@ -325,10 +323,10 @@ JWT_SECRET=your-jwt-secret-here
 
 **Solutions**:
 1. Restart development server:
-   <CommandBlock 
-     command="npm run dev:server"
-     description="Restart API server only"
-   />
+   ```bash
+npm run dev:server
+```
+Restart API server only
 
 2. Clear cache and restart:
    ```bash
@@ -343,16 +341,16 @@ JWT_SECRET=your-jwt-secret-here
 
 **Solutions**:
 1. Watch for import issues:
-   <CommandBlock 
-     command="npm run watch:imports"
-     description="Monitor and report import problems"
-   />
+   ```bash
+npm run watch:imports
+```
+Monitor and report import problems
 
 2. Auto-fix imports:
-   <CommandBlock 
-     command="npm run watch:imports:autofix"
-     description="Automatically fix import issues"
-   />
+   ```bash
+npm run watch:imports:autofix
+```
+Automatically fix import issues
 
 #### Test Failures After Database Changes
 
@@ -360,16 +358,16 @@ JWT_SECRET=your-jwt-secret-here
 
 **Solutions**:
 1. Regenerate Prisma Client:
-   <CommandBlock 
-     command="npm run prisma:generate"
-     description="Update Prisma Client with new schema"
-   />
+   ```bash
+npm run prisma:generate
+```
+Update Prisma Client with new schema
 
 2. Update test database:
-   <CommandBlock 
-     command="npm run prisma:migrate"
-     description="Apply migrations to test database"
-   />
+   ```bash
+npm run prisma:migrate
+```
+Apply migrations to test database
 
 ## Performance Tips
 

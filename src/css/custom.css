@@ -5,22 +5,51 @@
  * It includes Mifty branding colors, custom components, and theme overrides.
  */
 
-/* Mifty Brand Colors */
+/* Mifty Brand Colors - Modern Clean Theme */
 :root {
-  /* Primary brand colors - Modern blue/purple gradient theme */
+  /* Primary brand colors - Clean modern theme */
   --ifm-color-primary: #6366f1;
   --ifm-color-primary-dark: #4f46e5;
   --ifm-color-primary-darker: #4338ca;
   --ifm-color-primary-darkest: #3730a3;
   --ifm-color-primary-light: #818cf8;
   --ifm-color-primary-lighter: #a5b4fc;
-  --ifm-color-primary-lightest: #c7d2fe;
+  --ifm-color-primary-lightest: #e0e7ff;
+  
+  /* Modern neutral colors */
+  --ifm-color-gray-50: #f8fafc;
+  --ifm-color-gray-100: #f1f5f9;
+  --ifm-color-gray-200: #e2e8f0;
+  --ifm-color-gray-300: #cbd5e1;
+  --ifm-color-gray-400: #94a3b8;
+  --ifm-color-gray-500: #64748b;
+  --ifm-color-gray-600: #475569;
+  --ifm-color-gray-700: #334155;
+  --ifm-color-gray-800: #1e293b;
+  --ifm-color-gray-900: #0f172a;
   
   /* Secondary colors */
   --ifm-color-secondary: #10b981;
   --ifm-color-secondary-dark: #059669;
   --ifm-color-secondary-darker: #047857;
   --ifm-color-secondary-darkest: #065f46;
+  
+  /* Navbar colors for modern clean design */
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.95);
+  --ifm-navbar-link-color: var(--ifm-color-gray-700);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+  
+  /* Clean background */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: var(--ifm-color-gray-50);
+  
+  /* Footer colors */
+  --ifm-color-emphasis-800: #1f2937;
+  --ifm-color-emphasis-900: #111827;
+  --ifm-color-emphasis-600: #4b5563;
+  --ifm-color-white: #ffffff;
+  --ifm-color-gray-300: #d1d5db;
+  --ifm-color-gray-400: #9ca3af;
   
   /* Code and syntax highlighting */
   --ifm-code-font-size: 95%;
@@ -55,6 +84,11 @@
   --ifm-color-primary-lighter: #c7d2fe;
   --ifm-color-primary-lightest: #e0e7ff;
   
+  /* Dark mode navbar colors */
+  --ifm-navbar-background-color: #1f2937;
+  --ifm-navbar-link-color: #f9fafb;
+  --ifm-navbar-link-hover-color: #818cf8;
+  
   --ifm-code-background: #1e293b;
   --docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.2);
   
@@ -62,9 +96,12 @@
   --ifm-background-surface-color: #1e293b;
 }
 
-/* Custom navbar styling */
+/* Modern navbar styling */
 .navbar {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  background-color: var(--ifm-navbar-background-color);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.3);
 }
 
 .navbar__brand {
@@ -86,48 +123,96 @@
   background-clip: text;
 }
 
-/* Hero section styling */
+/* Improve navbar link visibility */
+.navbar__link {
+  color: var(--ifm-navbar-link-color) !important;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary) !important;
+  background-color: var(--ifm-color-primary-lightest);
+  text-decoration: none;
+}
+
+.navbar__item {
+  margin: 0 0.25rem;
+}
+
+/* Ensure navbar items are visible */
+.navbar__items--right .navbar__item {
+  color: var(--ifm-navbar-link-color);
+}
+
+.navbar__items--right .navbar__link {
+  color: var(--ifm-navbar-link-color) !important;
+  font-weight: 500;
+}
+
+.navbar__items--right .navbar__link:hover {
+  color: var(--ifm-color-primary) !important;
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+/* Hero section styling - Modern clean design */
 .hero {
-  background: var(--mifty-gradient);
-  color: white;
+  background: linear-gradient(135deg, #F5F7FF 0%, #E2E8F0 100%);
+  color: var(--ifm-color-gray-800);
+  border-bottom: 1px solid var(--ifm-color-gray-200);
 }
 
 .hero__title {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1rem;
+  background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero__subtitle {
   font-size: 1.25rem;
-  opacity: 0.9;
+  color: var(--ifm-color-gray-600);
   margin-bottom: 2rem;
+  font-weight: 400;
 }
 
-/* Custom button styles */
+/* Modern button styles */
 .button--primary {
   background: var(--ifm-color-primary);
   border: none;
   font-weight: 600;
   transition: all 0.2s ease;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.2);
 }
 
 .button--primary:hover {
   background: var(--ifm-color-primary-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 6px 20px 0 rgba(99, 102, 241, 0.3);
 }
 
 .button--secondary {
-  background: transparent;
-  border: 2px solid var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
+  background: white;
+  border: 1px solid var(--ifm-color-gray-300);
+  color: var(--ifm-color-gray-700);
   font-weight: 600;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 }
 
 .button--secondary:hover {
-  background: var(--ifm-color-primary);
-  color: white;
+  background: var(--ifm-color-gray-50);
+  border-color: var(--ifm-color-gray-400);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+  color: var(--ifm-color-gray-800);
 }
 
 /* Code block enhancements */
@@ -176,11 +261,59 @@
 
 /* Footer styling */
 .footer {
-  background: var(--ifm-color-emphasis-100);
+  background: var(--ifm-color-emphasis-800) !important;
+  color: var(--ifm-color-white) !important;
+}
+
+.footer__title {
+  color: var(--ifm-color-white) !important;
+  font-weight: 600;
+}
+
+.footer__item {
+  color: var(--ifm-color-gray-300) !important;
+}
+
+.footer__link-item {
+  color: var(--ifm-color-gray-300) !important;
+  transition: color 0.2s ease;
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-white) !important;
+  text-decoration: underline;
+}
+
+.footer__copyright {
+  color: var(--ifm-color-gray-400) !important;
+  border-top: 1px solid var(--ifm-color-emphasis-600);
+  padding-top: 1rem;
+  margin-top: 2rem;
 }
 
 [data-theme='dark'] .footer {
-  background: var(--ifm-background-surface-color);
+  background: var(--ifm-color-emphasis-900) !important;
+  color: var(--ifm-color-white) !important;
+}
+
+[data-theme='dark'] .footer__title {
+  color: var(--ifm-color-white) !important;
+}
+
+[data-theme='dark'] .footer__item {
+  color: var(--ifm-color-gray-300) !important;
+}
+
+[data-theme='dark'] .footer__link-item {
+  color: var(--ifm-color-gray-300) !important;
+}
+
+[data-theme='dark'] .footer__link-item:hover {
+  color: var(--ifm-color-white) !important;
+}
+
+[data-theme='dark'] .footer__copyright {
+  color: var(--ifm-color-gray-400) !important;
 }
 
 /* Enhanced Responsive Design */
@@ -197,6 +330,33 @@
   
   .navbar__item {
     font-size: 0.9rem;
+  }
+  
+  /* Mobile navbar menu styling */
+  .navbar-sidebar {
+    background-color: var(--ifm-navbar-background-color);
+  }
+  
+  .navbar-sidebar__item {
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-sidebar__brand {
+    background-color: var(--ifm-navbar-background-color);
+    border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  }
+  
+  .navbar-sidebar .navbar__link {
+    color: var(--ifm-navbar-link-color) !important;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin: 0.25rem 0;
+  }
+  
+  .navbar-sidebar .navbar__link:hover {
+    color: var(--ifm-navbar-link-hover-color) !important;
+    background-color: var(--ifm-color-primary-lightest);
   }
 }
 
@@ -259,6 +419,18 @@
     width: 100%;
     margin-bottom: 0.5rem;
   }
+}
+
+/* Announcement bar styling */
+.announcementBar_node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-Content-styles-module {
+  background-color: #fafbfc !important;
+  color: #091E42 !important;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.announcementBarContent_node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-Content-styles-module a {
+  color: var(--ifm-color-primary) !important;
+  font-weight: 600;
 }
 
 /* Custom utility classes */
@@ -360,13 +532,72 @@
 
 /* Ensure sufficient color contrast */
 .navbar__link {
-  color: var(--ifm-navbar-link-color);
+  color: var(--ifm-navbar-link-color) !important;
   font-weight: 500;
 }
 
 .navbar__link:hover {
-  color: var(--ifm-color-primary);
+  color: var(--ifm-navbar-link-hover-color) !important;
   text-decoration: underline;
+}
+
+/* Additional navbar styling for better visibility */
+.navbar__items {
+  align-items: center;
+}
+
+.navbar__items--right {
+  flex: 0 0 auto;
+}
+
+.navbar__items--right .navbar__item:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+/* Color mode toggle styling */
+.colorModeToggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  margin-left: 0.5rem;
+}
+
+.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-Toggle-styles-module {
+  background-color: var(--ifm-color-emphasis-300);
+  border: 1px solid var(--ifm-color-emphasis-400);
+}
+
+.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-Toggle-styles-module:hover {
+  background-color: var(--ifm-color-emphasis-400);
+}
+
+/* Search bar styling */
+.navbar__search {
+  margin-right: 1rem;
+}
+
+.DocSearch-Button {
+  background-color: var(--ifm-color-emphasis-200) !important;
+  border: 1px solid var(--ifm-color-emphasis-300) !important;
+  color: var(--ifm-font-color-base) !important;
+}
+
+.DocSearch-Button:hover {
+  background-color: var(--ifm-color-emphasis-300) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Ensure dropdown menus are visible */
+.dropdown__menu {
+  background-color: var(--ifm-navbar-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown__link {
+  color: var(--ifm-navbar-link-color) !important;
+}
+
+.dropdown__link:hover {
+  color: var(--ifm-navbar-link-hover-color) !important;
+  background-color: var(--ifm-color-primary-lightest);
 }
 
 /* Improve link visibility */

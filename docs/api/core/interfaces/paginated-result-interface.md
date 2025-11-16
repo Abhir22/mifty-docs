@@ -388,4 +388,4 @@ interface CursorPaginatedResult<T> {
 - [SearchOptions](./search-options-interface.md) - Query options for pagination
 - [BaseRepository](../base-repository.md) - Repository implementation
 - [BaseService](../base-service.md) - Service layer implementation
-- [PaginatedResponse](../utils/api-response.md#paginatedresponse) - API response wrapper
+- [PaginatedResponse](../utils/api-response.md#paginatedresponset) - API response wrapper

@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Building an E-commerce Backend with Mifty
 
 Learn how to build a complete e-commerce backend with payment processing, inventory management, order tracking, and real-time notifications using Mifty's powerful features.
@@ -26,7 +30,6 @@ A production-ready e-commerce API with:
 
 ## Step 1: Project Setup
 
-<CommandBlock>
 ```bash
 # Create new e-commerce project
 mifty init ecommerce-api
@@ -37,8 +40,7 @@ npm install
 
 # Start development environment
 npm run dev:full
-```
-</CommandBlock>
+```
 
 ## Step 2: Design the E-commerce Database Schema
 
@@ -254,7 +256,6 @@ Set up these relationships in the designer:
 
 ## Step 3: Generate E-commerce Modules
 
-<CommandBlock>
 ```bash
 # Generate all modules from database design
 npm run generate
@@ -262,20 +263,17 @@ npm run generate
 # This creates complete CRUD modules for:
 # - User, Address, Category, Product, ProductImage
 # - ProductVariant, Cart, CartItem, Order, OrderItem
-```
-</CommandBlock>
+```
 
 ## Step 4: Install Payment Processing
 
-<CommandBlock>
 ```bash
 # Install Stripe payment adapter
 npm run adapter install stripe
 
 # Install email service for notifications
 npm run adapter install email-service
-```
-</CommandBlock>
+```
 
 Configure Stripe in your `.env`:
 
@@ -529,12 +527,10 @@ export class OrderProcessingService {
 
 ### 6.1 Install WebSocket Support
 
-<CommandBlock>
 ```bash
 # Install WebSocket dependencies
 npm install socket.io @types/socket.io
-```
-</CommandBlock>
+```
 
 ### 6.2 Create Real-time Inventory Updates
 
@@ -577,7 +573,6 @@ export class WebSocketService {
 
 ### 7.1 Test Product Management
 
-<CommandBlock>
 ```bash
 # Create a category
 curl -X POST http://localhost:3000/api/v1/categories \
@@ -605,12 +600,10 @@ curl -X POST http://localhost:3000/api/v1/products \
 
 # Search products
 curl "http://localhost:3000/api/v1/products/search?q=headphones&minPrice=100&maxPrice=300"
-```
-</CommandBlock>
+```
 
 ### 7.2 Test Shopping Cart
 
-<CommandBlock>
 ```bash
 # Create a cart
 curl -X POST http://localhost:3000/api/v1/carts \
@@ -627,12 +620,10 @@ curl -X POST http://localhost:3000/api/v1/carts/CART_ID/items \
 
 # Get cart total
 curl http://localhost:3000/api/v1/carts/CART_ID/total
-```
-</CommandBlock>
+```
 
 ### 7.3 Test Order Processing
 
-<CommandBlock>
 ```bash
 # Create order from cart
 curl -X POST http://localhost:3000/api/v1/orders/from-cart \
@@ -666,8 +657,7 @@ curl -X POST http://localhost:3000/api/v1/orders/ORDER_ID/payment \
   -d '{
     "paymentMethodId": "pm_card_visa"
   }'
-```
-</CommandBlock>
+```
 
 ## Step 8: Performance Optimization
 
@@ -697,12 +687,10 @@ model Order {
 
 ### 8.2 Implement Caching
 
-<CommandBlock>
 ```bash
 # Install Redis for caching
 npm run adapter install redis
-```
-</CommandBlock>
+```
 
 Add caching to frequently accessed data:
 
@@ -857,7 +845,6 @@ volumes:
 
 ### 10.3 Deploy
 
-<CommandBlock>
 ```bash
 # Build for production
 npm run build
@@ -867,8 +854,7 @@ docker-compose -f docker-compose.prod.yml up -d
 
 # Run database migrations
 docker-compose exec app npm run prisma:migrate:deploy
-```
-</CommandBlock>
+```
 
 ## What You've Accomplished
 

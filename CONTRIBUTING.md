@@ -27,7 +27,7 @@ Before you begin, ensure you have the following installed:
 1. **Fork the repository**
    ```bash
    # Fork the repository on GitHub, then clone your fork
-   git clone https://github.com/YOUR_USERNAME/mifty.git
+   git clone https://github.com/YOUR_USERNAME/mifty-docs.git
    cd mifty/docs
    ```
 

@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # Complete Testing Guide for Mifty Applications
 
 Learn how to implement comprehensive testing strategies for your Mifty applications, including unit tests, integration tests, end-to-end tests, and performance testing.
@@ -805,13 +809,11 @@ describe('User Journey (E2E)', () => {
 
 ### 5.1 Load Testing Setup
 
-<CommandBlock>
 ```bash
 # Install performance testing tools
 npm install --save-dev artillery
 npm install --save-dev clinic
-```
-</CommandBlock>
+```
 
 Create performance test configuration:
 
@@ -1241,7 +1243,6 @@ jobs:
 
 ### 8.1 Running Different Test Types
 
-<CommandBlock>
 ```bash
 # Run all tests with coverage
 npm run test:coverage
@@ -1263,12 +1264,10 @@ npm run test:e2e
 
 # Run performance tests
 npm run test:performance
-```
-</CommandBlock>
+```
 
 ### 8.2 Analyzing Test Results
 
-<CommandBlock>
 ```bash
 # Generate detailed coverage report
 npm run test:coverage
@@ -1281,8 +1280,7 @@ npm test -- --verbose
 
 # Run tests and generate JUnit report
 npm test -- --reporters=default --reporters=jest-junit
-```
-</CommandBlock>
+```
 
 ## What You've Learned
 

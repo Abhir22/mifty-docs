@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Building a File Upload Service with Mifty
 
 Learn how to build a comprehensive file upload service with multiple storage providers, image processing, security features, and progress tracking using Mifty's storage adapters.
@@ -26,7 +30,6 @@ A production-ready file upload service featuring:
 
 ## Step 1: Project Setup
 
-<CommandBlock>
 ```bash
 # Create new file upload project
 mifty init file-upload-service
@@ -43,8 +46,7 @@ npm run adapter install storage-service
 
 # Start development
 npm run dev:full
-```
-</CommandBlock>
+```
 
 ## Step 2: Design File Management Database Schema
 
@@ -176,7 +178,6 @@ Set up these relationships:
 
 ## Step 3: Generate File Management Modules
 
-<CommandBlock>
 ```bash
 # Generate all modules
 npm run generate
@@ -184,8 +185,7 @@ npm run generate
 # This creates modules for:
 # - User, Folder, File, FileVersion
 # - FileShare, UploadSession
-```
-</CommandBlock>
+```
 
 ## Step 4: Configure Storage Providers
 
@@ -1130,7 +1130,6 @@ interface ScanResult {
 
 ### 9.1 Test Single File Upload
 
-<CommandBlock>
 ```bash
 # Test single file upload
 curl -X POST http://localhost:3000/api/v1/upload/single \
@@ -1148,12 +1147,10 @@ curl -X POST http://localhost:3000/api/v1/upload/single \
 #   "size": 1024000,
 #   "mimeType": "image/jpeg"
 # }
-```
-</CommandBlock>
+```
 
 ### 9.2 Test Multiple File Upload
 
-<CommandBlock>
 ```bash
 # Test multiple file upload
 curl -X POST http://localhost:3000/api/v1/upload/multiple \
@@ -1161,12 +1158,10 @@ curl -X POST http://localhost:3000/api/v1/upload/multiple \
   -F "files=@./image1.jpg" \
   -F "files=@./image2.png" \
   -F "files=@./document.pdf"
-```
-</CommandBlock>
+```
 
 ### 9.3 Test File Management
 
-<CommandBlock>
 ```bash
 # Get user files
 curl http://localhost:3000/api/v1/upload/files \
@@ -1194,19 +1189,16 @@ curl -X POST http://localhost:3000/api/v1/upload/files/FILE_ID/share \
 # Get storage usage
 curl http://localhost:3000/api/v1/upload/storage/usage \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
-```
-</CommandBlock>
+```
 
 ## Step 10: Performance Optimization
 
 ### 10.1 Add Caching
 
-<CommandBlock>
 ```bash
 # Install Redis for caching
 npm run adapter install redis
-```
-</CommandBlock>
+```
 
 Add caching to file operations:
 

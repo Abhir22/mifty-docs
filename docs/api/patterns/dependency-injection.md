@@ -670,5 +670,3 @@ describe('UserService', () => {
 
 - [Service Layer Pattern](./service-layer-pattern.md) - Business logic with DI
 - [Repository Pattern](./repository-pattern.md) - Data access with DI
-- [Module Organization](./module-organization.md) - Structuring modules with DI
-- [Testing Patterns](./testing-patterns.md) - Testing with dependency injection

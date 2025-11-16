@@ -453,7 +453,7 @@ branch_protection:
 
 ```bash
 # Git repository backup (automated)
-git clone --mirror https://github.com/abhir22/mifty.git
+git clone --mirror https://github.com/abhir22/mifty-docs.git
 
 # Documentation content export
 npm run export:content

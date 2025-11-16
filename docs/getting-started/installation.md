@@ -5,8 +5,6 @@ description: Complete step-by-step installation guide for Mifty CLI with prerequ
 keywords: [mifty, installation, nodejs, npm, setup, prerequisites]
 ---
 
-import CommandBlock from '@site/src/components/CommandBlock';
-
 # Installation Guide
 
 Get Mifty up and running on your system with this comprehensive installation guide. We'll walk you through prerequisites, installation, verification, and troubleshooting.
@@ -91,17 +89,17 @@ Before installing Mifty, ensure your system meets these requirements:
 
 Before installation, let's verify your system is ready:
 
-<CommandBlock 
-  command="# Check Node.js version (should be 16+)
+```bash
+# Check Node.js version (should be 16+)
 node --version
 
 # Check npm version (should be 7+)
 npm --version
 
 # Check if Git is installed (optional but recommended)
-git --version"
-  description="Run these commands to check your prerequisites"
-/>
+git --version
+```
+Run these commands to check your prerequisites
 
 **Expected output:**
 ```
@@ -127,10 +125,10 @@ git version 2.40.1
 
 Install Mifty CLI globally to use it from anywhere on your system:
 
-<CommandBlock 
-  command="npm install -g @mifty/cli"
-  description="Install Mifty CLI globally"
-/>
+```bash
+npm install -g @mifty/cli
+```
+Install Mifty CLI globally
 
 **What this does:**
 - ✅ Installs Mifty CLI commands globally
@@ -142,10 +140,10 @@ Install Mifty CLI globally to use it from anywhere on your system:
 
 If you prefer not to install globally, use npx:
 
-<CommandBlock 
-  command="npx @mifty/cli init my-project"
-  description="Use Mifty without global installation"
-/>
+```bash
+npx @mifty/cli init my-project
+```
+Use Mifty without global installation
 
 **When to use npx:**
 - 🎯 One-time project creation
@@ -156,23 +154,23 @@ If you prefer not to install globally, use npx:
 
 If you prefer Yarn package manager:
 
-<CommandBlock 
-  command="yarn global add @mifty/cli"
-  description="Install Mifty CLI globally with Yarn"
-/>
+```bash
+yarn global add @mifty/cli
+```
+Install Mifty CLI globally with Yarn
 
 ## ✅ Verify Installation
 
 After installation, verify everything is working correctly:
 
-<CommandBlock 
-  command="# Check Mifty version
+```bash
+# Check Mifty version
 mifty --version
 
 # View available commands
-mifty --help"
-  description="Verify your Mifty installation"
-/>
+mifty --help
+```
+Verify your Mifty installation
 
 **Expected output:**
 ```
@@ -232,17 +230,17 @@ npm run adapter             # Manage adapters
 
 ### Windows
 
-<CommandBlock 
-  command="# Using Command Prompt
+```bash
+# Using Command Prompt
 npm install -g @mifty/cli
 
 # Using PowerShell (run as Administrator if needed)
 npm install -g @mifty/cli
 
 # Verify installation
-mifty --version"
-  description="Windows installation steps"
-/>
+mifty --version
+```
+Windows installation steps
 
 **Windows-specific notes:**
 - 🔒 May need to run Command Prompt as Administrator
@@ -251,8 +249,8 @@ mifty --version"
 
 ### macOS
 
-<CommandBlock 
-  command="# Using Terminal
+```bash
+# Using Terminal
 npm install -g @mifty/cli
 
 # If permission errors, use sudo (not recommended)
@@ -262,9 +260,9 @@ sudo npm install -g @mifty/cli
 sudo chown -R $(whoami) ~/.npm
 
 # Verify installation
-mifty --version"
-  description="macOS installation steps"
-/>
+mifty --version
+```
+macOS installation steps
 
 **macOS-specific notes:**
 - 🍎 Works on both Intel and Apple Silicon Macs
@@ -273,8 +271,8 @@ mifty --version"
 
 ### Linux (Ubuntu/Debian)
 
-<CommandBlock 
-  command="# Update package list
+```bash
+# Update package list
 sudo apt update
 
 # Install Node.js and npm (if not installed)
@@ -284,9 +282,9 @@ sudo apt install nodejs npm
 npm install -g @mifty/cli
 
 # Verify installation
-mifty --version"
-  description="Linux installation steps"
-/>
+mifty --version
+```
+Linux installation steps
 
 **Linux-specific notes:**
 - 🐧 Works on all major Linux distributions
@@ -301,24 +299,24 @@ mifty --version"
 
 **Problem:** `EACCES` permission errors during global installation
 
-<CommandBlock 
-  command="# Fix npm permissions (recommended)
+```bash
+# Fix npm permissions (recommended)
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
 # Then install Mifty
-npm install -g @mifty/cli"
-  description="Fix npm permission issues"
-/>
+npm install -g @mifty/cli
+```
+Fix npm permission issues
 
 #### Command Not Found
 
 **Problem:** `mifty: command not found` after installation
 
-<CommandBlock 
-  command="# Check if npm global bin is in PATH
+```bash
+# Check if npm global bin is in PATH
 npm config get prefix
 
 # Add to PATH (replace with your npm prefix)
@@ -326,32 +324,32 @@ echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
 # Verify PATH includes npm global bin
-echo $PATH"
-  description="Fix PATH issues"
-/>
+echo $PATH
+```
+Fix PATH issues
 
 #### Network/Proxy Issues
 
 **Problem:** Installation fails due to network or proxy issues
 
-<CommandBlock 
-  command="# Clear npm cache
+```bash
+# Clear npm cache
 npm cache clean --force
 
 # Set registry (if behind corporate firewall)
 npm config set registry https://registry.npmjs.org/
 
 # Install with verbose logging
-npm install -g @mifty/cli --verbose"
-  description="Fix network-related installation issues"
-/>
+npm install -g @mifty/cli --verbose
+```
+Fix network-related installation issues
 
 #### Version Conflicts
 
 **Problem:** Conflicting versions or corrupted installation
 
-<CommandBlock 
-  command="# Uninstall existing version
+```bash
+# Uninstall existing version
 npm uninstall -g @mifty/cli
 
 # Clear npm cache
@@ -361,9 +359,9 @@ npm cache clean --force
 npm install -g @mifty/cli@latest
 
 # Verify installation
-mifty --version"
-  description="Fix version conflicts"
-/>
+mifty --version
+```
+Fix version conflicts
 
 ### Platform-Specific Issues
 
@@ -371,39 +369,39 @@ mifty --version"
 
 **Problem:** PowerShell blocks script execution
 
-<CommandBlock 
-  command="# Check current execution policy
+```bash
+# Check current execution policy
 Get-ExecutionPolicy
 
 # Set execution policy (run PowerShell as Administrator)
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 # Verify Mifty works
-mifty --version"
-  description="Fix PowerShell execution policy on Windows"
-/>
+mifty --version
+```
+Fix PowerShell execution policy on Windows
 
 #### macOS: Gatekeeper Issues
 
 **Problem:** macOS blocks unsigned binaries
 
-<CommandBlock 
-  command="# Allow unsigned binaries (if needed)
+```bash
+# Allow unsigned binaries (if needed)
 sudo spctl --master-disable
 
 # Or allow specific app through System Preferences > Security & Privacy
 
 # Verify Mifty works
-mifty --version"
-  description="Fix macOS Gatekeeper issues"
-/>
+mifty --version
+```
+Fix macOS Gatekeeper issues
 
 ### Getting Help
 
 If you're still experiencing issues:
 
 1. **📖 Check our [Troubleshooting Guide](../troubleshooting/)**
-2. **🐛 Report issues on [GitHub Issues](https://github.com/abhir22/miftyjs/issues)**
+2. **🐛 Report issues on [GitHub Issues](https://github.com/abhir22/mifty-docs/issues)**
 3. **💬 Join our community discussions**
 4. **📧 Contact support with detailed error messages**
 

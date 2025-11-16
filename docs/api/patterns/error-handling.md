@@ -876,8 +876,6 @@ throw new DatabaseException('Connection failed to postgres://user:password@local
 
 ## Related
 
-- [BaseException](../core/exceptions/base-exception.md) - Base exception class
-- [Validation Utilities](../core/utils/validate-and-transform.md) - Input validation
 - [Logger](../core/utils/logger.md) - Error logging
 - [API Response](../core/utils/api-response.md) - Response formatting
 - [Repository Decorator](../core/decorators/repository-decorator.md) - Automatic error handling

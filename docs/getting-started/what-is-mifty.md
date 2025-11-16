@@ -6,7 +6,6 @@ keywords: [mifty, nodejs, typescript, framework, database designer, code generat
 ---
 
 import ComparisonTable, { ComparisonRow } from '@site/src/components/ComparisonTable';
-import CommandBlock from '@site/src/components/CommandBlock';
 
 # What is Mifty?
 
@@ -16,10 +15,11 @@ Mifty is a **modern Node.js TypeScript framework** that revolutionizes backend d
 
 Mifty eliminates the repetitive, time-consuming tasks of backend development while ensuring you write **production-ready, maintainable code**. Instead of spending hours on boilerplate, focus on your business logic and unique features.
 
-<CommandBlock 
-  command="mifty init my-blog-api && cd my-blog-api && npm install && npm run dev:full"
-  description="From zero to running API in 2 minutes"
-/>
+```bash
+mifty init my-blog-api && cd my-blog-api && npm install && npm run dev:full
+```
+
+From zero to running API in 2 minutes
 
 **What you get instantly:**
 - ✅ TypeScript API server running on port 3000
@@ -199,8 +199,8 @@ Mifty generates **enterprise-grade code** with:
 
 ## 🎬 See It in Action
 
-<CommandBlock 
-  command="# Create a blog API in minutes
+```bash
+# Create a blog API in minutes
 mifty init blog-api
 cd blog-api
 npm install
@@ -216,9 +216,10 @@ npm run dev:full
 npm run generate
 
 # Your API is ready!
-# http://localhost:3000/api/v1/"
-  description="Complete workflow from idea to running API"
-/>
+# http://localhost:3000/api/v1/
+```
+
+Complete workflow from idea to running API
 
 ## 🚀 What's Next?
 
@@ -259,4 +260,4 @@ Ready to experience 10x faster backend development?
 3. **[Database Design](../database/visual-designer)** - Master the visual designer
 4. **[Code Generation](../framework/code-generation)** - Understand auto-generation
 5. **[Adapters](../adapters/)** - Add third-party integrations
-6. **[Tutorials](../tutorials/)** - Build real-world applications
+6. **[Tutorials](../tutorials/blog-api)** - Build real-world applications

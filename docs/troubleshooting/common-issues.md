@@ -84,11 +84,9 @@ taskkill /PID <PID> /F  # Windows
 **Solutions:**
 
 1. **Change port in environment:**
-   <CommandBlock>
    ```bash
    PORT=3001 npm run dev
    ```
-   </CommandBlock>
 
 2. **Update .env file:**
    ```env
@@ -98,12 +96,10 @@ taskkill /PID <PID> /F  # Windows
    ```
 
 3. **Use different ports for services:**
-   <CommandBlock>
    ```bash
    npm run dev:server  # API only on port 3000
    npm run db-designer  # Designer only on port 3001
    ```
-   </CommandBlock>
 
 ## Database Connection Issues
 
@@ -119,19 +115,15 @@ taskkill /PID <PID> /F  # Windows
    ```
 
 2. **Generate Prisma client:**
-   <CommandBlock>
    ```bash
    npm run prisma:generate
    npm run prisma:migrate
    ```
-   </CommandBlock>
 
 3. **Reset database if corrupted:**
-   <CommandBlock>
    ```bash
    npm run prisma:reset
    ```
-   </CommandBlock>
 
 ### PostgreSQL Connection Issues
 
@@ -139,7 +131,6 @@ taskkill /PID <PID> /F  # Windows
 
 **Diagnosis:**
 
-<CommandBlock>
 ```bash
 # Test connection
 psql -h localhost -U username -d database_name
@@ -148,7 +139,6 @@ psql -h localhost -U username -d database_name
 brew services list | grep postgresql  # macOS
 sudo systemctl status postgresql  # Linux
 ```
-</CommandBlock>
 
 **Solutions:**
 
@@ -176,14 +166,12 @@ sudo systemctl status postgresql  # Linux
 **Solutions:**
 
 1. **Check MySQL service:**
-   <CommandBlock>
    ```bash
    # Start MySQL
    brew services start mysql  # macOS
    sudo systemctl start mysql  # Linux
    net start mysql  # Windows
    ```
-   </CommandBlock>
 
 2. **Verify connection string:**
    ```env
@@ -191,11 +179,9 @@ sudo systemctl status postgresql  # Linux
    ```
 
 3. **Create database if it doesn't exist:**
-   <CommandBlock>
    ```bash
    mysql -u root -p -e "CREATE DATABASE my_database;"
    ```
-   </CommandBlock>
 
 ## Module Generation Issues
 
@@ -206,12 +192,10 @@ sudo systemctl status postgresql  # Linux
 **Diagnosis:**
 
 1. **Check db.design.ts syntax:**
-   <CommandBlock>
    ```bash
    # Validate TypeScript syntax
    npx tsc --noEmit src/db.design.ts
    ```
-   </CommandBlock>
 
 2. **Check for missing relationships:**
    - Ensure all foreign key references exist
@@ -238,7 +222,6 @@ sudo systemctl status postgresql  # Linux
    ```
 
 2. **Regenerate from scratch:**
-   <CommandBlock>
    ```bash
    # Backup current design
    cp src/db.design.ts src/db.design.backup.ts
@@ -247,7 +230,6 @@ sudo systemctl status postgresql  # Linux
    npm run db-designer
    # Recreate your schema in the UI
    ```
-   </CommandBlock>
 
 ### Generated Code Compilation Errors
 
@@ -256,11 +238,9 @@ sudo systemctl status postgresql  # Linux
 **Solutions:**
 
 1. **Update imports after generation:**
-   <CommandBlock>
    ```bash
    npm run lint:fix
    ```
-   </CommandBlock>
 
 2. **Check for naming conflicts:**
    - Ensure table names don't conflict with TypeScript keywords
@@ -268,11 +248,9 @@ sudo systemctl status postgresql  # Linux
    - Avoid reserved words (User, Date, etc.)
 
 3. **Regenerate Prisma client:**
-   <CommandBlock>
    ```bash
    npm run prisma:generate
    ```
-   </CommandBlock>
 
 ## Development Server Issues
 
@@ -283,30 +261,24 @@ sudo systemctl status postgresql  # Linux
 **Solutions:**
 
 1. **Check file watching:**
-   <CommandBlock>
    ```bash
    # Increase file watcher limit (Linux)
    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
    sudo sysctl -p
    ```
-   </CommandBlock>
 
 2. **Restart development server:**
-   <CommandBlock>
    ```bash
    # Stop current server (Ctrl+C)
    npm run dev
    ```
-   </CommandBlock>
 
 3. **Clear TypeScript cache:**
-   <CommandBlock>
    ```bash
    # Remove compiled files
    rm -rf dist/
    npm run build
    ```
-   </CommandBlock>
 
 ### Memory Issues During Development
 
@@ -315,12 +287,10 @@ sudo systemctl status postgresql  # Linux
 **Solutions:**
 
 1. **Increase Node.js memory limit:**
-   <CommandBlock>
    ```bash
    # Increase to 4GB
    NODE_OPTIONS="--max-old-space-size=4096" npm run dev
    ```
-   </CommandBlock>
 
 2. **Add to package.json:**
    ```json
@@ -340,13 +310,11 @@ sudo systemctl status postgresql  # Linux
 **Solutions:**
 
 1. **Update test database:**
-   <CommandBlock>
    ```bash
    # Set test environment
    NODE_ENV=test npm run prisma:migrate
    NODE_ENV=test npm run prisma:generate
    ```
-   </CommandBlock>
 
 2. **Check test configuration:**
    ```typescript
@@ -359,7 +327,6 @@ sudo systemctl status postgresql  # Linux
    ```
 
 3. **Run tests with debugging:**
-   <CommandBlock>
    ```bash
    # Run with verbose output
    npm test -- --verbose
@@ -367,7 +334,6 @@ sudo systemctl status postgresql  # Linux
    # Run specific test file
    npm test -- user.service.test.ts
    ```
-   </CommandBlock>
 
 ## Import and Module Issues
 
@@ -410,7 +376,6 @@ sudo systemctl status postgresql  # Linux
 **Solutions:**
 
 1. **Identify circular dependencies:**
-   <CommandBlock>
    ```bash
    # Install dependency analyzer
    npm install --save-dev madge
@@ -418,7 +383,6 @@ sudo systemctl status postgresql  # Linux
    # Check for circular dependencies
    npx madge --circular src/
    ```
-   </CommandBlock>
 
 2. **Refactor to break cycles:**
    ```typescript
@@ -448,12 +412,10 @@ sudo systemctl status postgresql  # Linux
    ```
 
 2. **Check database queries:**
-   <CommandBlock>
    ```bash
    # Open Prisma Studio to inspect data
    npm run prisma:studio
    ```
-   </CommandBlock>
 
 **Solutions:**
 
@@ -488,12 +450,10 @@ sudo systemctl status postgresql  # Linux
 **Solutions:**
 
 1. **Monitor memory usage:**
-   <CommandBlock>
    ```bash
    # Start with memory monitoring
    NODE_OPTIONS="--expose-gc" npm run dev
    ```
-   </CommandBlock>
 
 2. **Implement pagination:**
    ```typescript
@@ -516,15 +476,12 @@ sudo systemctl status postgresql  # Linux
 **Solutions:**
 
 1. **Check TypeScript errors:**
-   <CommandBlock>
    ```bash
    # Type check without emitting
    npx tsc --noEmit
    ```
-   </CommandBlock>
 
 2. **Update dependencies:**
-   <CommandBlock>
    ```bash
    # Update all dependencies
    npm update
@@ -532,17 +489,14 @@ sudo systemctl status postgresql  # Linux
    # Check for security vulnerabilities
    npm audit fix
    ```
-   </CommandBlock>
 
 3. **Clean build:**
-   <CommandBlock>
    ```bash
    # Remove node_modules and reinstall
    rm -rf node_modules package-lock.json
    npm install
    npm run build
    ```
-   </CommandBlock>
 
 ### Production Environment Issues
 
@@ -558,26 +512,21 @@ sudo systemctl status postgresql  # Linux
    ```
 
 2. **Run production build locally:**
-   <CommandBlock>
    ```bash
    npm run build
    NODE_ENV=production npm start
    ```
-   </CommandBlock>
 
 3. **Check logs for errors:**
-   <CommandBlock>
    ```bash
    # Enable detailed logging
    DEBUG=* npm start
    ```
-   </CommandBlock>
 
 ## Getting Help
 
 ### Enable Debug Mode
 
-<CommandBlock>
 ```bash
 # Enable all debug output
 DEBUG=* npm run dev
@@ -585,11 +534,9 @@ DEBUG=* npm run dev
 # Enable specific debug categories
 DEBUG=mifty:* npm run dev
 ```
-</CommandBlock>
 
 ### Collect System Information
 
-<CommandBlock>
 ```bash
 # Check versions
 node --version
@@ -599,7 +546,6 @@ mifty --version
 # Check system info
 npm run doctor  # If available
 ```
-</CommandBlock>
 
 ### Report Issues
 
@@ -613,7 +559,6 @@ When reporting issues, include:
 
 **Useful commands for debugging:**
 
-<CommandBlock>
 ```bash
 # Generate debug report
 npm run debug:report
@@ -624,12 +569,11 @@ npm run services:status
 # Validate configuration
 npm run config:validate
 ```
-</CommandBlock>
 
 ### Community Resources
 
-- **GitHub Issues:** [Report bugs and feature requests](https://github.com/abhir22/miftyjs/issues)
+- **GitHub Issues:** [Report bugs and feature requests](https://github.com/abhir22/mifty-docs/issues)
 - **Documentation:** [Complete documentation](https://mifty.dev/docs)
-- **Examples:** [Sample projects and tutorials](https://github.com/mifty-examples)
+- **Examples:** [Sample projects and tutorials](https://github.com/mifty-docs-examples)
 
 > **💡 Pro Tip:** Most issues are resolved by ensuring you have the latest version of Mifty and clearing npm cache. Try `npm cache clean --force` and reinstalling before reporting issues.

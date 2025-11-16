@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -41,12 +41,9 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/abhir22/mifty/tree/main/docs/',
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
+          // Edit links and last update info removed
+          showLastUpdateAuthor: false,
+          showLastUpdateTime: false,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -64,74 +61,75 @@ const config: Config = {
   plugins: [
     // Local search plugin
     'docusaurus-lunr-search',
-    // Analytics plugins
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: process.env.GOOGLE_ANALYTICS_ID || 'G-XXXXXXXXXX',
-        anonymizeIP: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-google-tag-manager',
-      {
-        containerId: process.env.GOOGLE_TAG_MANAGER_ID || 'GTM-XXXXXXX',
-      },
-    ],
+    // Analytics plugins - disabled until proper IDs are configured
+    // [
+    //   '@docusaurus/plugin-google-gtag',
+    //   {
+    //     trackingID: process.env.GOOGLE_ANALYTICS_ID,
+    //     anonymizeIP: true,
+    //   },
+    // ],
+    // [
+    //   '@docusaurus/plugin-google-tag-manager',
+    //   {
+    //     containerId: process.env.GOOGLE_TAG_MANAGER_ID,
+    //   },
+    // ],
     // Performance and SEO plugins
-    [
-      '@docusaurus/plugin-pwa',
-      {
-        debug: false,
-        offlineModeActivationStrategies: [
-          'appInstalled',
-          'standalone',
-          'queryString',
-        ],
-        pwaHead: [
-          {
-            tagName: 'link',
-            rel: 'icon',
-            href: '/img/favicon-32x32.png',
-          },
-          {
-            tagName: 'link',
-            rel: 'manifest',
-            href: '/manifest.json',
-          },
-          {
-            tagName: 'meta',
-            name: 'theme-color',
-            content: '#6366f1',
-          },
-          {
-            tagName: 'meta',
-            name: 'apple-mobile-web-app-capable',
-            content: 'yes',
-          },
-          {
-            tagName: 'meta',
-            name: 'apple-mobile-web-app-status-bar-style',
-            content: '#6366f1',
-          },
-          {
-            tagName: 'link',
-            rel: 'apple-touch-icon',
-            href: '/img/apple-touch-icon.png',
-          },
-          {
-            tagName: 'meta',
-            name: 'msapplication-TileImage',
-            content: '/img/android-chrome-192x192.png',
-          },
-          {
-            tagName: 'meta',
-            name: 'msapplication-TileColor',
-            content: '#6366f1',
-          },
-        ],
-      },
-    ],
+    // PWA plugin temporarily disabled due to missing theme component
+    // [
+    //   '@docusaurus/plugin-pwa',
+    //   {
+    //     debug: false,
+    //     offlineModeActivationStrategies: [
+    //       'appInstalled',
+    //       'standalone',
+    //       'queryString',
+    //     ],
+    //     pwaHead: [
+    //       {
+    //         tagName: 'link',
+    //         rel: 'icon',
+    //         href: '/img/favicon-32x32.png',
+    //       },
+    //       {
+    //         tagName: 'link',
+    //         rel: 'manifest',
+    //         href: '/manifest.json',
+    //       },
+    //       {
+    //         tagName: 'meta',
+    //         name: 'theme-color',
+    //         content: '#6366f1',
+    //       },
+    //       {
+    //         tagName: 'meta',
+    //         name: 'apple-mobile-web-app-capable',
+    //         content: 'yes',
+    //       },
+    //       {
+    //         tagName: 'meta',
+    //         name: 'apple-mobile-web-app-status-bar-style',
+    //         content: '#6366f1',
+    //       },
+    //       {
+    //         tagName: 'link',
+    //         rel: 'apple-touch-icon',
+    //         href: '/img/apple-touch-icon.png',
+    //       },
+    //       {
+    //         tagName: 'meta',
+    //         name: 'msapplication-TileImage',
+    //         content: '/img/android-chrome-192x192.png',
+    //       },
+    //       {
+    //         tagName: 'meta',
+    //         name: 'msapplication-TileColor',
+    //         content: '#6366f1',
+    //       },
+    //     ],
+    //   },
+    // ],
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -143,19 +141,25 @@ const config: Config = {
     ],
   ],
 
+  themes: ['@docusaurus/theme-mermaid'],
+
+  markdown: {
+    mermaid: true,
+  },
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/logo.png',
     metadata: [
-      {name: 'keywords', content: 'mifty, framework, nodejs, typescript, database, api, documentation'},
-      {name: 'description', content: 'Enterprise-Grade Node.js TypeScript Framework with Visual Database Designer & Auto Code Generation'},
-      {name: 'author', content: 'Mifty Framework Team'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1.0'},
-      {name: 'theme-color', content: '#6366f1'},
-      {property: 'og:type', content: 'website'},
-      {property: 'og:site_name', content: 'Mifty Framework Documentation'},
-      {name: 'twitter:card', content: 'summary_large_image'},
-      {name: 'twitter:site', content: '@miftyframework'},
+      { name: 'keywords', content: 'mifty, framework, nodejs, typescript, database, api, documentation' },
+      { name: 'description', content: 'Enterprise-Grade Node.js TypeScript Framework with Visual Database Designer & Auto Code Generation' },
+      { name: 'author', content: 'Mifty Framework Team' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+      { name: 'theme-color', content: '#6366f1' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'Mifty Framework Documentation' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@miftyframework' },
     ],
     colorMode: {
       respectPrefersColorScheme: true,
@@ -176,19 +180,19 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'apiSidebar',
-          position: 'left',
-          label: 'API',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'apiSidebar',
+        //   position: 'left',
+        //   label: 'API',
+        // },
         {
           href: 'https://www.npmjs.com/package/@mifty/cli',
           label: 'NPM',
           position: 'right',
         },
         {
-          href: 'https://github.com/abhir22/mifty',
+          href: 'https://github.com/abhir22/mifty-docs',
           label: 'GitHub',
           position: 'right',
         },
@@ -219,11 +223,11 @@ const config: Config = {
           items: [
             {
               label: 'GitHub Issues',
-              href: 'https://github.com/abhir22/mifty/issues',
+              href: 'https://github.com/abhir22/mifty-docs/issues',
             },
             {
               label: 'GitHub Discussions',
-              href: 'https://github.com/abhir22/mifty/discussions',
+              href: 'https://github.com/abhir22/mifty-docs/discussions',
             },
             {
               label: 'Stack Overflow',
@@ -240,7 +244,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/abhir22/mifty',
+              href: 'https://github.com/abhir22/mifty-docs',
             },
           ],
         },
@@ -267,7 +271,7 @@ const config: Config = {
     announcementBar: {
       id: 'support_us',
       content:
-        '⭐️ If you like Mifty, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/abhir22/mifty" aria-label="Star Mifty on GitHub (opens in new tab)">GitHub</a>! ⭐️',
+        '⭐️ If you like Mifty, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/abhir22/mifty-docs" aria-label="Star Mifty on GitHub (opens in new tab)">GitHub</a>! ⭐️',
       backgroundColor: '#fafbfc',
       textColor: '#091E42',
       isCloseable: false,

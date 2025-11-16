@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Building Real-time Features with Mifty
 
 Learn how to add real-time functionality to your Mifty applications using WebSockets, including live chat, notifications, collaborative editing, and real-time dashboards.
@@ -25,7 +29,6 @@ A comprehensive real-time system featuring:
 
 ## Step 1: Project Setup
 
-<CommandBlock>
 ```bash
 # Create new real-time project
 mifty init realtime-app
@@ -40,8 +43,7 @@ npm run adapter install redis
 
 # Start development
 npm run dev:full
-```
-</CommandBlock>
+```
 
 ## Step 2: Design Real-time Database Schema
 
@@ -191,7 +193,6 @@ Set up these relationships:
 
 ## Step 3: Generate Real-time Modules
 
-<CommandBlock>
 ```bash
 # Generate all modules
 npm run generate
@@ -199,8 +200,7 @@ npm run generate
 # This creates modules for:
 # - User, Room, RoomMember, Message
 # - Notification, Document, DocumentEdit
-```
-</CommandBlock>
+```
 
 ## Step 4: Set Up WebSocket Server
 
@@ -865,7 +865,6 @@ export class NotificationService {
 
 ### 9.1 Test Chat System
 
-<CommandBlock>
 ```bash
 # Create a chat room
 curl -X POST http://localhost:3000/api/v1/chat/rooms \
@@ -884,8 +883,7 @@ curl -X POST http://localhost:3000/api/v1/chat/rooms/ROOM_ID/join \
 # Get room messages
 curl http://localhost:3000/api/v1/chat/rooms/ROOM_ID/messages \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
-```
-</CommandBlock>
+```
 
 ### 9.2 Test WebSocket Connection
 
@@ -928,16 +926,13 @@ socket.on('disconnect', () => {
 });
 ```
 
-<CommandBlock>
 ```bash
 # Run the WebSocket test
 node test-websocket.js
-```
-</CommandBlock>
+```
 
 ### 9.3 Test Document Collaboration
 
-<CommandBlock>
 ```bash
 # Create a document
 curl -X POST http://localhost:3000/api/v1/documents \
@@ -951,19 +946,16 @@ curl -X POST http://localhost:3000/api/v1/documents \
 
 # Test document editing via WebSocket
 # (Use the WebSocket client to emit document:edit events)
-```
-</CommandBlock>
+```
 
 ## Step 10: Performance Optimization
 
 ### 10.1 Add Redis for Scaling
 
-<CommandBlock>
 ```bash
 # Configure Redis adapter for WebSocket scaling
 npm install @socket.io/redis-adapter redis
-```
-</CommandBlock>
+```
 
 Update WebSocket service for Redis:
 

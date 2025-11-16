@@ -484,5 +484,4 @@ async getUsers(req: Request, res: Response) {
 
 - [SearchOptions Interface](../interfaces/search-options-interface.md) - Options structure
 - [BaseController](../base-controller.md) - Automatic integration
-- [Validation Utilities](./validate-and-transform.md) - Input validation
 - [API Response](./api-response.md) - Response formatting

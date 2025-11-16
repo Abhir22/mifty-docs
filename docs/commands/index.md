@@ -25,31 +25,29 @@ Production deployment and build commands.
 
 ## Most Common Commands
 
-import CommandBlock from '@site/src/components/CommandBlock';
-
 ### Quick Start
-<CommandBlock 
-  command="mifty init my-api && cd my-api && npm run dev"
-  description="Create new project and start development server"
-/>
+```bash
+mifty init my-api && cd my-api && npm run dev
+```
+Create new project and start development server
 
 ### Development Workflow
-<CommandBlock 
-  command="npm run dev:full"
-  description="Start all development services (API + DB Designer + Monitor)"
-/>
+```bash
+npm run dev:full
+```
+Start all development services (API + DB Designer + Monitor)
 
 ### Generate Code
-<CommandBlock 
-  command="npm run generate"
-  description="Generate modules from database design"
-/>
+```bash
+npm run generate
+```
+Generate modules from database design
 
 ### Run Tests
-<CommandBlock 
-  command="npm test"
-  description="Run all tests with coverage"
-/>
+```bash
+npm test
+```
+Run all tests with coverage
 
 ## Command Categories
 
@@ -75,4 +73,4 @@ When running development commands, these services become available:
 
 - See [Troubleshooting](../troubleshooting/) for common command issues
 - Check [Development Workflows](./development-commands.md) for detailed processes
-- Visit [Getting Started](../getting-started/) for initial setup guidance
+- Visit [Getting Started](../getting-started/quick-start) for initial setup guidance

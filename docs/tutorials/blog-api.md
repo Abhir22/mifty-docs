@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Building a Blog API with Mifty
 
 Learn how to build a complete blog API from scratch using Mifty's visual database designer, auto-generation features, and authentication system. This tutorial covers everything from project setup to deployment.
@@ -230,7 +234,6 @@ Click **"💾 Save Design"** in the designer. This automatically:
 
 Now let's generate complete CRUD modules for our blog entities:
 
-<CommandBlock>
 ```bash
 # Generate all modules from database design
 npm run generate
@@ -242,8 +245,7 @@ npm run generate
 # - Tag (with slug generation)
 # - Comment (with nested replies)
 # - PostTag (junction table)
-```
-</CommandBlock>
+```
 
 **What was generated:**
 
@@ -275,7 +277,6 @@ src/
 
 Your API is automatically available! Let's test the endpoints:
 
-<CommandBlock>
 ```bash
 # Test user creation
 curl -X POST http://localhost:3000/api/v1/users \
@@ -302,8 +303,7 @@ curl http://localhost:3000/api/v1/users
 
 # Get all categories
 curl http://localhost:3000/api/v1/categories
-```
-</CommandBlock>
+```
 
 **Available endpoints for each entity:**
 
@@ -321,7 +321,6 @@ curl http://localhost:3000/api/v1/categories
 
 Let's add JWT authentication to secure our blog API:
 
-<CommandBlock>
 ```bash
 # Install authentication adapter
 npm run auth:install auth-email-otp
@@ -332,8 +331,7 @@ npm run auth:install auth-email-otp
 # - Password hashing
 # - Email verification
 # - Protected route middleware
-```
-</CommandBlock>
+```
 
 ### 5.1 Configure Authentication
 
@@ -352,7 +350,6 @@ GMAIL_APP_PASSWORD=your_app_password
 
 ### 5.2 Test Authentication
 
-<CommandBlock>
 ```bash
 # Register a new user
 curl -X POST http://localhost:3000/api/v1/auth/register \
@@ -378,12 +375,10 @@ curl -X POST http://localhost:3000/api/v1/auth/login \
 #   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
 #   "user": { "id": "...", "email": "author@example.com", ... }
 # }
-```
-</CommandBlock>
+```
 
 ### 5.3 Use Protected Endpoints
 
-<CommandBlock>
 ```bash
 # Create a post (requires authentication)
 curl -X POST http://localhost:3000/api/v1/posts \
@@ -397,14 +392,12 @@ curl -X POST http://localhost:3000/api/v1/posts \
     "categoryId": "CATEGORY_ID_HERE",
     "status": "PUBLISHED"
   }'
-```
-</CommandBlock>
+```
 
 ## Step 6: Add Advanced Features
 
 ### 6.1 Install Storage for File Uploads
 
-<CommandBlock>
 ```bash
 # Install universal storage adapter
 npm run adapter install storage-service
@@ -413,12 +406,10 @@ npm run adapter install storage-service
 STORAGE_TYPE=local
 LOCAL_UPLOAD_DIR=./uploads
 LOCAL_BASE_URL=http://localhost:3000/uploads
-```
-</CommandBlock>
+```
 
 Now you can upload featured images for posts:
 
-<CommandBlock>
 ```bash
 # Upload image
 curl -X POST http://localhost:3000/api/v1/upload \
@@ -426,8 +417,7 @@ curl -X POST http://localhost:3000/api/v1/upload \
   -F "file=@./my-image.jpg"
 
 # Response: { "url": "http://localhost:3000/uploads/filename.jpg" }
-```
-</CommandBlock>
+```
 
 ### 6.2 Add Search Functionality
 
@@ -475,7 +465,6 @@ async searchPosts(query: SearchPostsDto) {
 
 ### 6.3 Test Advanced Features
 
-<CommandBlock>
 ```bash
 # Search posts
 curl "http://localhost:3000/api/v1/posts/search?q=technology&category=tech"
@@ -485,14 +474,12 @@ curl "http://localhost:3000/api/v1/posts?categoryId=CATEGORY_ID"
 
 # Get post with comments
 curl "http://localhost:3000/api/v1/posts/POST_ID?include=comments,author,category"
-```
-</CommandBlock>
+```
 
 ## Step 7: Run Tests
 
 Mifty automatically generates comprehensive tests for all your modules:
 
-<CommandBlock>
 ```bash
 # Run all tests
 npm test
@@ -502,8 +489,7 @@ npm run test:watch
 
 # Run tests with coverage
 npm run test:coverage
-```
-</CommandBlock>
+```
 
 **Generated tests include:**
 - ✅ Unit tests for services and repositories
@@ -517,15 +503,13 @@ npm run test:coverage
 
 ### 8.1 Build for Production
 
-<CommandBlock>
 ```bash
 # Build the application
 npm run build
 
 # Start production server
 npm start
-```
-</CommandBlock>
+```
 
 ### 8.2 Database Migration
 
@@ -536,15 +520,13 @@ For production, switch to PostgreSQL:
 DATABASE_URL="postgresql://user:password@localhost:5432/blog_production"
 ```
 
-<CommandBlock>
 ```bash
 # Apply migrations to production database
 npm run prisma:migrate:deploy
 
 # Generate Prisma client for production
 npm run prisma:generate
-```
-</CommandBlock>
+```
 
 ### 8.3 Docker Deployment
 
@@ -566,13 +548,11 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-<CommandBlock>
 ```bash
 # Build and run Docker container
 docker build -t blog-api .
 docker run -p 3000:3000 --env-file .env blog-api
-```
-</CommandBlock>
+```
 
 ## Step 9: API Documentation
 

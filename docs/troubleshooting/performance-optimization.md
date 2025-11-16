@@ -1039,12 +1039,10 @@ connectionPool.release(conn);
 
 ### 5.1 Load Testing Setup
 
-<CommandBlock>
 ```bash
 # Install load testing tools
 npm install --save-dev artillery autocannon clinic
 ```
-</CommandBlock>
 
 Create load testing configuration:
 
@@ -1242,7 +1240,6 @@ export class PerformanceMonitorService {
 
 ### 6.1 Load Testing Commands
 
-<CommandBlock>
 ```bash
 # Run load test with Artillery
 npx artillery run load-test.yml
@@ -1263,7 +1260,6 @@ node --inspect --expose-gc dist/main.js
 node --prof dist/main.js
 # Generate report: node --prof-process isolate-*.log > profile.txt
 ```
-</CommandBlock>
 
 ### 6.2 Performance Testing Script
 
