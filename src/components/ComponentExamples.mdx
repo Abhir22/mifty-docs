@@ -1,0 +1,183 @@
+---
+title: Component Examples
+description: Examples of custom Mifty documentation components
+---
+
+import CommandBlock from './CommandBlock';
+import ComparisonTable, { ComparisonRow } from './ComparisonTable';
+import ServiceTable, { Service } from './ServiceTable';
+import CodeTabs, { CodeTab } from './CodeTabs';
+import AdapterGuide from './AdapterGuide';
+
+# Custom Documentation Components
+
+This page demonstrates the custom React components created for the Mifty documentation.
+
+## CommandBlock Component
+
+Use this component to display CLI commands with descriptions and copy functionality:
+
+<CommandBlock 
+  command="npm install -g @mifty/cli"
+  description="Install Mifty CLI globally on your system"
+/>
+
+<CommandBlock 
+  command="mifty init my-project --template=api"
+  description="Create a new Mifty project with API template"
+  language="bash"
+/>
+
+## ComparisonTable Component
+
+Perfect for showing Traditional vs Mifty approaches:
+
+<ComparisonTable title="Development Speed Comparison">
+  <ComparisonRow 
+    feature="Project Setup"
+    traditional="Hours of manual configuration, dependency management, and boilerplate code"
+    mifty="mifty init - Complete setup in 30 seconds"
+    timeSaved="~2 hours"
+  />
+  <ComparisonRow 
+    feature="Database Design"
+    traditional="Manual schema creation, migration files, ORM configuration"
+    mifty="Visual designer with automatic migrations"
+    timeSaved="~1 hour"
+  />
+  <ComparisonRow 
+    feature="API Development"
+    traditional="Manual route creation, validation, error handling"
+    mifty="Auto-generated CRUD APIs with validation"
+    timeSaved="~3 hours"
+  />
+</ComparisonTable>
+
+## ServiceTable Component
+
+Display running services and their status:
+
+<ServiceTable title="Development Services">
+  <Service 
+    name="API Server"
+    url="http://localhost:3000"
+    description="Main REST API server"
+    status="running"
+    port={3000}
+  />
+  <Service 
+    name="Database"
+    description="PostgreSQL database server"
+    status="running"
+    port={5432}
+  />
+  <Service 
+    name="Redis Cache"
+    url="http://localhost:6379"
+    description="Redis caching server"
+    status="stopped"
+    port={6379}
+  />
+</ServiceTable>
+
+## CodeTabs Component
+
+Show code examples for different databases or languages:
+
+<CodeTabs defaultTab="PostgreSQL" groupId="database-config">
+  <CodeTab label="PostgreSQL" language="bash">
+    DATABASE_URL="postgresql://user:password@localhost:5432/mydb"
+    DB_TYPE="postgresql"
+  </CodeTab>
+  <CodeTab label="MySQL" language="bash">
+    DATABASE_URL="mysql://user:password@localhost:3306/mydb"
+    DB_TYPE="mysql"
+  </CodeTab>
+  <CodeTab label="SQLite" language="bash">
+    DATABASE_URL="file:./dev.db"
+    DB_TYPE="sqlite"
+  </CodeTab>
+  <CodeTab label="MongoDB" language="bash">
+    DATABASE_URL="mongodb://localhost:27017/mydb"
+    DB_TYPE="mongodb"
+  </CodeTab>
+</CodeTabs>
+
+## AdapterGuide Component
+
+Comprehensive adapter documentation:
+
+<AdapterGuide
+  name="GitHub OAuth Adapter"
+  command="npm run adapter install github-oauth"
+  description="Integrate GitHub OAuth authentication into your Mifty application"
+  category="auth"
+  envVars={[
+    {
+      name: "GITHUB_CLIENT_ID",
+      description: "Your GitHub OAuth app client ID",
+      required: true,
+      example: "your_github_client_id"
+    },
+    {
+      name: "GITHUB_CLIENT_SECRET",
+      description: "Your GitHub OAuth app client secret",
+      required: true,
+      example: "your_github_client_secret"
+    },
+    {
+      name: "GITHUB_CALLBACK_URL",
+      description: "OAuth callback URL for your application",
+      required: false,
+      example: "http://localhost:3000/auth/github/callback",
+      default: "http://localhost:3000/auth/github/callback"
+    }
+  ]}
+  configSteps={[
+    {
+      step: 1,
+      title: "Create GitHub OAuth App",
+      description: "Go to GitHub Settings > Developer settings > OAuth Apps and create a new OAuth app",
+      note: "Make sure to set the correct callback URL in your GitHub app settings"
+    },
+    {
+      step: 2,
+      title: "Configure Environment Variables",
+      description: "Add the required environment variables to your .env file",
+      code: `GITHUB_CLIENT_ID=your_client_id_here
+GITHUB_CLIENT_SECRET=your_client_secret_here
+GITHUB_CALLBACK_URL=http://localhost:3000/auth/github/callback`,
+      language: "bash"
+    }
+  ]}
+  examples={[
+    {
+      title: "Basic GitHub Authentication",
+      description: "Simple GitHub OAuth login implementation",
+      code: `import { githubAuth } from '@mifty/auth-github';
+
+// Initialize GitHub authentication
+const auth = githubAuth({
+  clientId: process.env.GITHUB_CLIENT_ID,
+  clientSecret: process.env.GITHUB_CLIENT_SECRET,
+  callbackUrl: process.env.GITHUB_CALLBACK_URL
+});
+
+// Use in your route
+app.get('/auth/github', auth.authenticate());
+app.get('/auth/github/callback', auth.callback());`,
+      language: "typescript"
+    }
+  ]}
+  troubleshooting={[
+    {
+      problem: "OAuth callback URL mismatch",
+      solution: "Ensure the callback URL in your GitHub app settings matches the GITHUB_CALLBACK_URL environment variable",
+      code: "GITHUB_CALLBACK_URL=http://localhost:3000/auth/github/callback"
+    },
+    {
+      problem: "Invalid client credentials",
+      solution: "Double-check your GitHub client ID and secret in the .env file"
+    }
+  ]}
+/>

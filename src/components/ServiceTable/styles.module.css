@@ -1,0 +1,296 @@
+.serviceTableContainer {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.title {
+  margin: 0 0 1rem 0;
+  padding: 1rem 1rem 0 1rem;
+  color: var(--ifm-color-content);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.serviceTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--ifm-background-surface-color);
+  font-size: 0.9rem;
+}
+
+.headerRow {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.headerRow th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nameHeader {
+  width: 20%;
+  min-width: 150px;
+}
+
+.statusHeader {
+  width: 15%;
+  min-width: 100px;
+}
+
+.urlHeader {
+  width: 25%;
+  min-width: 200px;
+}
+
+.descriptionHeader {
+  width: 30%;
+  min-width: 200px;
+}
+
+.actionsHeader {
+  width: 10%;
+  min-width: 120px;
+}
+
+.serviceRow {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  transition: background-color 0.2s ease;
+}
+
+.serviceRow:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.serviceRow:last-child {
+  border-bottom: none;
+}
+
+.nameCell,
+.statusCell,
+.urlCell,
+.descriptionCell,
+.actionsCell {
+  padding: 1rem;
+  vertical-align: top;
+}
+
+.nameContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.serviceName {
+  color: var(--ifm-color-content);
+  font-weight: 600;
+}
+
+.port {
+  color: var(--ifm-color-content-secondary);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.85rem;
+  background: var(--ifm-color-emphasis-200);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  border: 1px solid currentColor;
+}
+
+.statusIcon {
+  font-size: 0.6rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.urlButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: none;
+  border: none;
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.85rem;
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+}
+
+.urlButton:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+.externalIcon {
+  flex-shrink: 0;
+}
+
+.noUrl {
+  color: var(--ifm-color-content-secondary);
+  font-style: italic;
+}
+
+.descriptionCell {
+  color: var(--ifm-color-content-secondary);
+  line-height: 1.4;
+}
+
+.actionsContainer {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.actionButton {
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionprimary {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.actionprimary:hover {
+  background: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+}
+
+.actionsecondary {
+  background: transparent;
+  border-color: var(--ifm-color-emphasis-400);
+  color: var(--ifm-color-content);
+}
+
+.actionsecondary:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.actiondanger {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: white;
+}
+
+.actiondanger:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .serviceTableContainer {
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+[data-theme='dark'] .port {
+  background: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .serviceRow:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .statusBadge {
+  filter: brightness(0.9);
+}
+
+[data-theme='dark'] .actionsecondary {
+  border-color: var(--ifm-color-emphasis-500);
+}
+
+[data-theme='dark'] .actionsecondary:hover {
+  background: var(--ifm-color-emphasis-300);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .serviceTable {
+    font-size: 0.8rem;
+  }
+  
+  .headerRow th {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .nameCell,
+  .statusCell,
+  .urlCell,
+  .descriptionCell,
+  .actionsCell {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .nameHeader {
+    min-width: 120px;
+  }
+  
+  .statusHeader {
+    min-width: 80px;
+  }
+  
+  .urlHeader,
+  .descriptionHeader {
+    min-width: 150px;
+  }
+  
+  .actionsHeader {
+    min-width: 100px;
+  }
+  
+  .statusBadge {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .actionButton {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Very small screens - stack layout */
+@media (max-width: 480px) {
+  .tableWrapper {
+    overflow-x: scroll;
+  }
+  
+  .serviceTable {
+    min-width: 700px;
+  }
+}

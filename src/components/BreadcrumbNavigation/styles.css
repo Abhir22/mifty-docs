@@ -1,0 +1,83 @@
+/* Breadcrumb Navigation Styles */
+.breadcrumb-navigation {
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-link {
+  color: var(--ifm-color-emphasis-700);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+}
+
+.breadcrumb-current {
+  color: var(--ifm-font-color-base);
+  font-weight: 500;
+}
+
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: var(--ifm-color-emphasis-500);
+  user-select: none;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .breadcrumb-navigation {
+  border-bottom-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .breadcrumb-link {
+  color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme='dark'] .breadcrumb-link:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .breadcrumb-navigation {
+    margin-bottom: 0.75rem;
+  }
+  
+  .breadcrumb-list {
+    font-size: 0.8rem;
+  }
+  
+  .breadcrumb-separator {
+    margin: 0 0.25rem;
+  }
+}
+
+/* Accessibility improvements */
+.breadcrumb-navigation:focus-within {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.breadcrumb-link:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}

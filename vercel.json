@@ -1,0 +1,99 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build:optimized",
+  "outputDirectory": "build",
+  "installCommand": "npm ci",
+  "framework": null,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(css|js))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(png|jpg|jpeg|gif|svg|ico|woff|woff2))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.html)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/docs",
+      "destination": "/docs/getting-started/what-is-mifty",
+      "permanent": true
+    },
+    {
+      "source": "/api",
+      "destination": "/docs/api/core-modules",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "functions": {
+    "app/api/analytics.js": {
+      "maxDuration": 10
+    }
+  },
+  "env": {
+    "GOOGLE_ANALYTICS_ID": "@google_analytics_id",
+    "GOOGLE_TAG_MANAGER_ID": "@google_tag_manager_id",
+    "ALGOLIA_APP_ID": "@algolia_app_id",
+    "ALGOLIA_SEARCH_API_KEY": "@algolia_search_api_key"
+  }
+}

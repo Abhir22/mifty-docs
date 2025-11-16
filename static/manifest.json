@@ -1,0 +1,69 @@
+{
+  "name": "Mifty Framework Documentation",
+  "short_name": "Mifty Docs",
+  "description": "Enterprise-Grade Node.js TypeScript Framework with Visual Database Designer & Auto Code Generation",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#6366f1",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["developer", "documentation", "framework"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/img/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/img/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Mifty Documentation Desktop View"
+    },
+    {
+      "src": "/img/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mifty Documentation Mobile View"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Getting Started",
+      "short_name": "Start",
+      "description": "Quick start guide for Mifty Framework",
+      "url": "/docs/getting-started/what-is-mifty",
+      "icons": [
+        {
+          "src": "/img/icon-start.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "API Reference",
+      "short_name": "API",
+      "description": "Complete API documentation",
+      "url": "/docs/api/core-modules",
+      "icons": [
+        {
+          "src": "/img/icon-api.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

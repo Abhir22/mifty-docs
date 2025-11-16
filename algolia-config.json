@@ -1,0 +1,127 @@
+{
+  "index_name": "mifty-docs",
+  "start_urls": [
+    {
+      "url": "https://mifty.dev/docs/",
+      "tags": [
+        "docs"
+      ],
+      "selectors_key": "docs"
+    },
+    {
+      "url": "https://mifty.dev/blog/",
+      "tags": [
+        "blog"
+      ],
+      "selectors_key": "blog"
+    }
+  ],
+  "sitemap_urls": [
+    "https://mifty.dev/sitemap.xml"
+  ],
+  "sitemap_alternate_links": true,
+  "stop_urls": [
+    "/tests",
+    "/node_modules"
+  ],
+  "selectors": {
+    "docs": {
+      "lvl0": {
+        "selector": ".menu__link--sublist.menu__link--active, .navbar__item.navbar__link--active",
+        "global": true,
+        "default_value": "Documentation"
+      },
+      "lvl1": "article h1, article header h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:not(:first-child)"
+    },
+    "blog": {
+      "lvl0": {
+        "selector": ".navbar__item.navbar__link--active",
+        "global": true,
+        "default_value": "Blog"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5",
+      "lvl6": "article h6",
+      "text": "article p, article li"
+    }
+  },
+  "strip_chars": " .,;:#",
+  "custom_settings": {
+    "separatorsToIndex": "_",
+    "attributesForFaceting": [
+      "type",
+      "lang",
+      "language",
+      "version",
+      "docusaurus_tag"
+    ],
+    "attributesToRetrieve": [
+      "hierarchy",
+      "content",
+      "anchor",
+      "url",
+      "url_without_anchor",
+      "type"
+    ],
+    "attributesToHighlight": [
+      "hierarchy",
+      "content"
+    ],
+    "attributesToSnippet": [
+      "content:10"
+    ],
+    "camelCaseAttributes": [
+      "hierarchy",
+      "content"
+    ],
+    "searchableAttributes": [
+      "unordered(hierarchy.lvl0)",
+      "unordered(hierarchy.lvl1)",
+      "unordered(hierarchy.lvl2)",
+      "unordered(hierarchy.lvl3)",
+      "unordered(hierarchy.lvl4)",
+      "unordered(hierarchy.lvl5)",
+      "unordered(hierarchy.lvl6)",
+      "content"
+    ],
+    "distinct": true,
+    "attributeForDistinct": "url",
+    "customRanking": [
+      "desc(weight.pageRank)",
+      "desc(weight.level)",
+      "asc(weight.position)"
+    ],
+    "ranking": [
+      "words",
+      "filters",
+      "typo",
+      "attribute",
+      "proximity",
+      "exact",
+      "custom"
+    ],
+    "highlightPreTag": "<span class=\"algolia-docsearch-suggestion--highlight\">",
+    "highlightPostTag": "</span>",
+    "minWordSizefor1Typo": 3,
+    "minWordSizefor2Typos": 7,
+    "allowTyposOnNumericTokens": false,
+    "minProximity": 1,
+    "ignorePlurals": true,
+    "advancedSyntax": true,
+    "attributeCriteriaComputedByMinProximity": true,
+    "removeWordsIfNoResults": "allOptional"
+  },
+  "conversation_id": [
+    "833762294"
+  ],
+  "nb_hits": 46250
+}

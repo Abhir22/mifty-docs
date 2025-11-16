@@ -1,0 +1,103 @@
+.commandBlock {
+  margin: 1rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  overflow: hidden;
+}
+
+.description {
+  padding: 0.75rem 1rem;
+  background: var(--ifm-color-emphasis-100);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  font-size: 0.9rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+.commandContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.command {
+  flex: 1;
+  margin: 0;
+  padding: 1rem;
+  background: var(--ifm-code-background);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  overflow-x: auto;
+  border: none;
+}
+
+.command code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: var(--ifm-code-color);
+}
+
+.copyButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--ifm-color-emphasis-200);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: var(--ifm-color-content);
+}
+
+.copyButton:hover {
+  background: var(--ifm-color-emphasis-300);
+  transform: scale(1.05);
+}
+
+.copyButton:active {
+  transform: scale(0.95);
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .commandBlock {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .description {
+  background: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .copyButton {
+  background: var(--ifm-color-emphasis-300);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+[data-theme='dark'] .copyButton:hover {
+  background: var(--ifm-color-emphasis-400);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .command {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .copyButton {
+    top: 0.25rem;
+    right: 0.25rem;
+    padding: 0.375rem;
+  }
+  
+  .description {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}

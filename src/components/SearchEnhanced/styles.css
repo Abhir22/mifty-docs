@@ -1,0 +1,78 @@
+/* Enhanced search component styles */
+.search-enhanced {
+  display: flex;
+  align-items: center;
+}
+
+.search-hit-enhanced {
+  position: relative;
+}
+
+.search-hit-meta {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.search-hit-category {
+  background: var(--ifm-color-primary);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .search-hit-category {
+  background: var(--ifm-color-primary-dark);
+}
+
+/* Search result highlighting */
+.DocSearch-Hit mark {
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+[data-theme='dark'] .DocSearch-Hit mark {
+  background: var(--ifm-color-primary-darkest);
+  color: var(--ifm-color-primary-lightest);
+}
+
+/* Search modal customizations */
+.DocSearch-Modal {
+  --docsearch-primary-color: var(--ifm-color-primary);
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-modal-background: var(--ifm-background-color);
+  --docsearch-searchbox-background: var(--ifm-color-emphasis-200);
+  --docsearch-searchbox-focus-background: var(--ifm-color-emphasis-100);
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-muted-color: var(--ifm-color-emphasis-600);
+  --docsearch-modal-shadow: var(--ifm-global-shadow-lw);
+}
+
+/* Search analytics and optimization */
+.DocSearch-Hit[aria-selected='true'] {
+  background: var(--ifm-color-primary-lightest);
+}
+
+[data-theme='dark'] .DocSearch-Hit[aria-selected='true'] {
+  background: var(--ifm-color-primary-darkest);
+}
+
+/* Search performance indicators */
+.DocSearch-Hit--Result {
+  transition: background-color 0.1s ease;
+}
+
+.DocSearch-Hit--Result:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .DocSearch-Hit--Result:hover {
+  background: var(--ifm-color-emphasis-200);
+}
