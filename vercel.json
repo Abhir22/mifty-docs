@@ -4,69 +4,50 @@
   "outputDirectory": "build",
   "installCommand": "npm ci",
   "framework": null,
+
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=()"
-        }
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
       ]
     },
     {
-      "source": "/static/(.*)",
+      "source": "/static/:all*",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
-      "source": "/(.*\\.(css|js))",
+      "source": "/:all*.css",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
-      "source": "/(.*\\.(png|jpg|jpeg|gif|svg|ico|woff|woff2))",
+      "source": "/:all*.js",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
-      "source": "/(.*\\.html)",
+      "source": "/:all*.(png|jpg|jpeg|gif|svg|ico|woff|woff2)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/:all*.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
     }
   ],
+
   "redirects": [
     {
       "source": "/docs",
@@ -79,21 +60,20 @@
       "permanent": true
     }
   ],
+
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ],
+
   "functions": {
     "app/api/analytics.js": {
       "maxDuration": 10
     }
   },
+
   "env": {
-    "GOOGLE_ANALYTICS_ID": "@google_analytics_id",
-    "GOOGLE_TAG_MANAGER_ID": "@google_tag_manager_id",
-    "ALGOLIA_APP_ID": "@algolia_app_id",
-    "ALGOLIA_SEARCH_API_KEY": "@algolia_search_api_key"
   }
 }
