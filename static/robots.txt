@@ -1,34 +1,11 @@
 # Robots.txt for Mifty Framework Documentation
-# Allow all crawlers to access the site
 
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Prevent indexing of internal development folders
+Disallow: /.docusaurus
+Disallow: /node_modules
+
+# Sitemap for full indexing
 Sitemap: https://mifty.dev/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
-# Disallow crawling of build artifacts and internal files
-Disallow: /.docusaurus/
-Disallow: /build/
-Disallow: /node_modules/
-
-# Allow crawling of important documentation sections
-Allow: /docs/
-Allow: /img/
-Allow: /static/
-
-# Specific instructions for major search engines
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1

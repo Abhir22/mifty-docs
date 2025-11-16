@@ -1,5 +1,42 @@
 import React from 'react';
 import Head from '@docusaurus/Head';
+import { validateTitle, validateDescription, validateStructuredData } from '../utils/seo-validation';
+
+/**
+ * Breadcrumb item interface for navigation structure
+ */
+export interface BreadcrumbItem {
+  /** Display name of the breadcrumb item */
+  name: string;
+  /** URL of the breadcrumb item */
+  url: string;
+}
+
+/**
+ * FAQ item interface for question-answer content
+ */
+export interface FAQItem {
+  /** The question text */
+  question: string;
+  /** The answer text */
+  answer: string;
+}
+
+/**
+ * Article metadata interface for blog-style content
+ */
+export interface ArticleData {
+  /** Article publication date in ISO format */
+  publishedTime: string;
+  /** Article modification date in ISO format (optional) */
+  modifiedTime?: string;
+  /** Article author name */
+  author: string;
+  /** Article section/category */
+  section: string;
+  /** Article tags (optional) */
+  tags?: string[];
+}
 
 /**
  * Props interface for the SEOHead component
@@ -19,6 +56,14 @@ export interface SEOHeadProps {
   url?: string;
   /** Additional structured data */
   structuredData?: Record<string, any>;
+  /** Breadcrumb navigation items */
+  breadcrumbs?: BreadcrumbItem[];
+  /** FAQ data for question-answer content */
+  faqData?: FAQItem[];
+  /** Article metadata for blog-style content */
+  articleData?: ArticleData;
+  /** Custom schema objects to include */
+  customSchema?: Record<string, any>[];
 }
 
 /**
@@ -46,32 +91,128 @@ interface SoftwareApplicationSchema {
 }
 
 /**
- * Validates title length for optimal SEO
+ * Structured data interface for BreadcrumbList schema
  */
-const validateTitle = (title: string): string => {
-  const maxLength = 60;
-  if (title.length > maxLength) {
-    console.warn(`SEO Warning: Title "${title}" is ${title.length} characters. Optimal length is under ${maxLength} characters.`);
-  }
-  return title;
+interface BreadcrumbListSchema {
+  '@context': 'https://schema.org';
+  '@type': 'BreadcrumbList';
+  itemListElement: Array<{
+    '@type': 'ListItem';
+    position: number;
+    name: string;
+    item: string;
+  }>;
+}
+
+/**
+ * Structured data interface for FAQPage schema
+ */
+interface FAQPageSchema {
+  '@context': 'https://schema.org';
+  '@type': 'FAQPage';
+  mainEntity: Array<{
+    '@type': 'Question';
+    name: string;
+    acceptedAnswer: {
+      '@type': 'Answer';
+      text: string;
+    };
+  }>;
+}
+
+/**
+ * Structured data interface for Article schema
+ */
+interface ArticleSchema {
+  '@context': 'https://schema.org';
+  '@type': 'Article';
+  headline: string;
+  description: string;
+  author: {
+    '@type': 'Person';
+    name: string;
+  };
+  publisher: {
+    '@type': 'Organization';
+    name: string;
+    logo: {
+      '@type': 'ImageObject';
+      url: string;
+    };
+  };
+  datePublished: string;
+  dateModified?: string;
+  articleSection: string;
+  keywords?: string[];
+  url: string;
+}
+
+/**
+ * Generates breadcrumb structured data
+ */
+const generateBreadcrumbSchema = (breadcrumbs: BreadcrumbItem[]): BreadcrumbListSchema => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url.startsWith('http') ? item.url : `https://mifty.dev${item.url}`
+    }))
+  };
 };
 
 /**
- * Validates description length for optimal SEO
+ * Generates FAQ structured data
  */
-const validateDescription = (description: string): string => {
-  const minLength = 120;
-  const maxLength = 160;
-  
-  if (description.length < minLength) {
-    console.warn(`SEO Warning: Description is ${description.length} characters. Optimal length is ${minLength}-${maxLength} characters.`);
-  }
-  
-  if (description.length > maxLength) {
-    console.warn(`SEO Warning: Description is ${description.length} characters. Optimal length is ${minLength}-${maxLength} characters.`);
-  }
-  
-  return description;
+const generateFAQSchema = (faqData: FAQItem[]): FAQPageSchema => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer
+      }
+    }))
+  };
+};
+
+/**
+ * Generates article structured data
+ */
+const generateArticleSchema = (
+  title: string,
+  description: string,
+  url: string,
+  articleData: ArticleData
+): ArticleSchema => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description: description,
+    author: {
+      '@type': 'Person',
+      name: articleData.author
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Mifty Framework',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://mifty.dev/img/logo.png'
+      }
+    },
+    datePublished: articleData.publishedTime,
+    dateModified: articleData.modifiedTime || articleData.publishedTime,
+    articleSection: articleData.section,
+    keywords: articleData.tags,
+    url: url
+  };
 };
 
 /**
@@ -121,21 +262,76 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   type = 'website',
   image = '/img/logo.png',
   url,
-  structuredData
+  structuredData,
+  breadcrumbs,
+  faqData,
+  articleData,
+  customSchema
 }) => {
-  // Validate and format title
-  const validatedTitle = validateTitle(title);
-  const fullTitle = `${validatedTitle} | Mifty Framework for Node.js`;
+  // Validate and format title with enhanced validation
+  const titleValidation = validateTitle(title);
+  if (titleValidation.warnings.length > 0) {
+    titleValidation.warnings.forEach(warning => console.warn(`SEO Title Warning: ${warning}`));
+  }
+  if (titleValidation.errors.length > 0) {
+    titleValidation.errors.forEach(error => console.error(`SEO Title Error: ${error}`));
+  }
+  const fullTitle = `${title} | Mifty Framework for Node.js`;
   
-  // Validate description
-  const validatedDescription = validateDescription(description);
+  // Validate description with enhanced validation
+  const descriptionValidation = validateDescription(description);
+  if (descriptionValidation.warnings.length > 0) {
+    descriptionValidation.warnings.forEach(warning => console.warn(`SEO Description Warning: ${warning}`));
+  }
+  if (descriptionValidation.errors.length > 0) {
+    descriptionValidation.errors.forEach(error => console.error(`SEO Description Error: ${error}`));
+  }
+  const validatedDescription = description;
   
   // Generate canonical URL
   const canonicalUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://mifty.dev');
   
-  // Generate structured data
-  const defaultStructuredData = generateSoftwareApplicationSchema(title, validatedDescription, canonicalUrl);
-  const finalStructuredData = structuredData || defaultStructuredData;
+  // Generate structured data schemas
+  const schemas: Record<string, any>[] = [];
+  
+  // Default software application schema
+  const defaultStructuredData = generateSoftwareApplicationSchema(title, description, canonicalUrl);
+  schemas.push(structuredData || defaultStructuredData);
+  
+  // Add breadcrumb schema if provided
+  if (breadcrumbs && breadcrumbs.length > 0) {
+    schemas.push(generateBreadcrumbSchema(breadcrumbs));
+  }
+  
+  // Add FAQ schema if provided
+  if (faqData && faqData.length > 0) {
+    schemas.push(generateFAQSchema(faqData));
+  }
+  
+  // Add article schema if provided
+  if (articleData) {
+    schemas.push(generateArticleSchema(title, description, canonicalUrl, articleData));
+  }
+  
+  // Add custom schemas if provided
+  if (customSchema && customSchema.length > 0) {
+    schemas.push(...customSchema);
+  }
+  
+  // Validate all structured data
+  schemas.forEach((schema, index) => {
+    const validation = validateStructuredData(schema);
+    if (validation.warnings.length > 0) {
+      validation.warnings.forEach(warning => 
+        console.warn(`SEO Structured Data Warning (Schema ${index + 1}): ${warning}`)
+      );
+    }
+    if (validation.errors.length > 0) {
+      validation.errors.forEach(error => 
+        console.error(`SEO Structured Data Error (Schema ${index + 1}): ${error}`)
+      );
+    }
+  });
   
   // Format keywords
   const keywordString = keywords.join(', ');
@@ -176,12 +372,32 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="theme-color" content="#6366f1" />
       
       {/* Structured Data (JSON-LD) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(finalStructuredData)
-        }}
-      />
+      {schemas.map((schema, index) => (
+        <script
+          key={`schema-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema)
+          }}
+        />
+      ))}
+      
+      {/* Enhanced meta tags for better SEO */}
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="revisit-after" content="7 days" />
+      <meta name="distribution" content="global" />
+      <meta name="rating" content="general" />
+      <meta httpEquiv="content-language" content="en" />
+      
+      {/* Additional Open Graph metadata */}
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:updated_time" content={new Date().toISOString()} />
+      
+      {/* Additional Twitter metadata */}
+      <meta name="twitter:domain" content="mifty.dev" />
+      <meta name="twitter:url" content={canonicalUrl} />
     </Head>
   );
 };

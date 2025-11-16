@@ -1,0 +1,787 @@
+{
+  "summary": {
+    "totalPages": 72,
+    "averageScore": 86,
+    "distribution": {
+      "excellent": 9,
+      "good": 62,
+      "needsImprovement": 1,
+      "poor": 0
+    }
+  },
+  "pages": [
+    {
+      "path": "404.html",
+      "title": "Page Not Found | Mifty Framework",
+      "description": "Discover Mifty Framework - the enterprise-grade Node.js TypeScript framework that accelerates backend development. Build scalable modular applications with visual database designer, auto code generation, and seamless Prisma integration. Start building robust APIs today.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 270 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "components\\ComponentExamples\\index.html",
+      "title": "Component Examples | Mifty Framework",
+      "description": "Examples of custom Mifty documentation components",
+      "score": 85,
+      "recommendations": [
+        "Description: Description too short: 49 chars (min: 120)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "components\\SEOHead\\index.html",
+      "title": "SEOHead Component | Mifty Framework",
+      "description": "A reusable TypeScript component for consistent SEO metadata across Mifty documentation pages.",
+      "score": 85,
+      "recommendations": [
+        "Description: Description too short: 93 chars (min: 120)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\adapters\\ai-services\\index.html",
+      "title": "AI & ML Services | Mifty Framework",
+      "description": "Complete guide to integrating OpenAI and other AI services with Mifty for intelligent features",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 94 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\adapters\\authentication\\index.html",
+      "title": "Authentication Adapters | Mifty Framework",
+      "description": "Complete guide to integrating OAuth providers and OTP authentication with Mifty",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 79 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\adapters\\custom-development\\index.html",
+      "title": "Custom Adapter Development | Mifty Framework",
+      "description": "Creating custom adapters for Mifty Framework to integrate with third-party services and APIs.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 93 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\adapters\\email-services\\index.html",
+      "title": "Email Service Adapters | Mifty Framework",
+      "description": "Complete guide to integrating email services with Mifty including Gmail, SMTP, SendGrid, and AWS SES",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 100 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\adapters\\index.html",
+      "title": "Adapters & Integrations | Mifty Framework",
+      "description": "Extend your Mifty application with powerful adapters and third-party integrations.",
+      "score": 85,
+      "recommendations": [
+        "Description: Description too short: 82 chars (min: 120)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\adapters\\payment-processing\\index.html",
+      "title": "Payment Processing | Mifty Framework",
+      "description": "Complete guide to integrating Stripe payment processing with Mifty for subscriptions, one-time payments, and marketplace features",
+      "score": 95,
+      "recommendations": [
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\adapters\\storage-solutions\\index.html",
+      "title": "Storage & Cloud Services | Mifty Framework",
+      "description": "Complete guide to file storage solutions including S3, local storage, and Cloudinary with Mifty",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 95 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\app\\index.html",
+      "title": "App Class | Mifty Framework",
+      "description": "The App class is the main application class that orchestrates the initialization and configuration of your Mifty application.",
+      "score": 82,
+      "recommendations": [
+        "Title: Title too short: 27 chars (min: 30)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\base-controller\\index.html",
+      "title": "BaseController | Mifty Framework",
+      "description": "The BaseController is an abstract class that provides a complete set of CRUD operations for your API endpoints. It handles request validation, response formatting, and error handling automatically.",
+      "score": 78,
+      "recommendations": [
+        "Description: Description should include primary keywords",
+        "Description: Description too long: 197 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\base-repository\\index.html",
+      "title": "BaseRepository | Mifty Framework",
+      "description": "The BaseRepository is an abstract class that implements the repository pattern for data access operations. It provides a standardized interface for database operations using Prisma ORM.",
+      "score": 78,
+      "recommendations": [
+        "Description: Description should include primary keywords",
+        "Description: Description too long: 185 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\base-service\\index.html",
+      "title": "BaseService | Mifty Framework",
+      "description": "The BaseService is an abstract class that provides a standardized service layer implementation with business logic validation and error handling. It acts as an intermediary between controllers and repositories.",
+      "score": 68,
+      "recommendations": [
+        "Title: Title too short: 29 chars (min: 30)",
+        "Description: Description should include primary keywords",
+        "Description: Description too long: 210 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\decorators\\repository-decorator\\index.html",
+      "title": "Repository Decorator | Mifty Framework",
+      "description": "The Repository Decorator provides automatic error handling and logging for repository operations.",
+      "score": 80,
+      "recommendations": [
+        "Description: Description too short: 97 chars (min: 120)",
+        "Description: Description should include primary keywords",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\interfaces\\paginated-result-interface\\index.html",
+      "title": "PaginatedResult Interface | Mifty Framework",
+      "description": "The PaginatedResult interface defines the structure for paginated query results in the Mifty framework. It provides metadata about pagination along with the actual data.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 169 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\interfaces\\repository-interface\\index.html",
+      "title": "IRepository Interface | Mifty Framework",
+      "description": "The IRepository interface defines the contract for data access operations in the Mifty framework. It provides a standardized set of methods for CRUD operations, searching, and pagination.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 187 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\interfaces\\search-options-interface\\index.html",
+      "title": "SearchOptions Interface | Mifty Framework",
+      "description": "The SearchOptions interface defines the structure for query parameters used in search and pagination operations throughout the Mifty framework.",
+      "score": 92,
+      "recommendations": [
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\interfaces\\service-interface\\index.html",
+      "title": "IService Interface | Mifty Framework",
+      "description": "The IService interface defines the contract for service layer operations in the Mifty framework. It provides a standardized set of methods for business logic operations, acting as an intermediary between controllers and repositories.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 233 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\loaders\\index.html",
+      "title": "Application Loaders | Mifty Framework",
+      "description": "The Mifty framework uses a loader pattern to initialize different aspects of the application in the correct order. Loaders handle dependency injection, Express configuration, database connections, and route loading.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 215 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\utils\\api-response\\index.html",
+      "title": "API Response Utilities | Mifty Framework",
+      "description": "The API Response utilities provide standardized response formatting for REST API endpoints in the Mifty framework. They ensure consistent response structure across all endpoints.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 178 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\utils\\logger\\index.html",
+      "title": "Logger Utility | Mifty Framework",
+      "description": "The Logger utility provides structured logging capabilities using Winston with daily log rotation and environment-specific configuration.",
+      "score": 87,
+      "recommendations": [
+        "Description: Description should include primary keywords",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core\\utils\\request-option-builder\\index.html",
+      "title": "RequestOptionBuilder Utility | Mifty Framework",
+      "description": "The RequestOptionBuilder utility provides methods for parsing and validating query parameters from HTTP requests, converting them into structured options for database queries.",
+      "score": 78,
+      "recommendations": [
+        "Description: Description should include primary keywords",
+        "Description: Description too long: 175 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\core-modules\\index.html",
+      "title": "Core Modules API | Mifty Framework",
+      "description": "API reference for Mifty's core modules.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 39 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\index.html",
+      "title": "API Reference | Mifty Framework",
+      "description": "Welcome to the Mifty Framework API Reference. This section provides comprehensive documentation for all core modules, interfaces, and utilities available in the Mifty framework.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 177 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\patterns\\database-patterns\\index.html",
+      "title": "Database Patterns | Mifty Framework",
+      "description": "Common database design patterns and best practices used in Mifty applications.",
+      "score": 85,
+      "recommendations": [
+        "Description: Description too short: 78 chars (min: 120)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\patterns\\dependency-injection\\index.html",
+      "title": "Dependency Injection Pattern | Mifty Framework",
+      "description": "Dependency Injection (DI) in Mifty provides a clean way to manage dependencies between classes, making your code more testable, maintainable, and flexible. The framework uses a container-based approach to automatically resolve and inject dependencies.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 251 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\patterns\\error-handling\\index.html",
+      "title": "Error Handling Patterns | Mifty Framework",
+      "description": "Mifty provides a comprehensive error handling system with structured exceptions, automatic error transformation, and consistent error responses. The framework uses a hierarchical exception system that provides detailed error information while maintaining security.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 264 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\patterns\\repository-pattern\\index.html",
+      "title": "Repository Pattern | Mifty Framework",
+      "description": "The Repository pattern in Mifty provides a clean abstraction layer between your business logic and data access logic. It encapsulates the logic needed to access data sources, centralizing common data access functionality for better maintainability and decoupling.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 263 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\patterns\\service-layer-pattern\\index.html",
+      "title": "Service Layer Pattern | Mifty Framework",
+      "description": "The Service Layer pattern in Mifty provides a clean separation between business logic and data access. Services act as an intermediary layer that orchestrates business operations, validates business rules, and coordinates between controllers and repositories.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 259 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\repository-pattern\\index.html",
+      "title": "Repository Pattern API | Mifty Framework",
+      "description": "API reference for repository pattern implementation.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too short: 52 chars (min: 120)",
+        "Description: Description should include primary keywords",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\service-layer\\index.html",
+      "title": "Service Layer API | Mifty Framework",
+      "description": "API reference for service layer components.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too short: 43 chars (min: 120)",
+        "Description: Description should include primary keywords",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\api\\utility-functions\\index.html",
+      "title": "Utility Functions API | Mifty Framework",
+      "description": "API reference for utility functions and helpers.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too short: 48 chars (min: 120)",
+        "Description: Description should include primary keywords",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\commands\\cli-commands\\index.html",
+      "title": "CLI Commands | Mifty Framework",
+      "description": "Complete reference for all Mifty CLI commands and npm scripts.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 62 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\commands\\database-commands\\index.html",
+      "title": "Database & Prisma Commands | Mifty Framework",
+      "description": "Complete guide to database management and Prisma commands in Mifty framework.",
+      "score": 85,
+      "recommendations": [
+        "Description: Description too short: 77 chars (min: 120)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\commands\\development-commands\\index.html",
+      "title": "Development Commands | Mifty Framework",
+      "description": "Essential commands for daily development workflow with Mifty framework.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 71 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\commands\\index.html",
+      "title": "Commands Reference | Mifty Framework",
+      "description": "Complete reference for all Mifty CLI commands, npm scripts, and development workflows.",
+      "score": 85,
+      "recommendations": [
+        "Description: Description too short: 86 chars (min: 120)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\commands\\npm-scripts\\index.html",
+      "title": "NPM Scripts & Development Workflows | Mifty Framework",
+      "description": "Complete guide to all NPM scripts available in Mifty projects and their usage in development workflows.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 103 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\commands\\production-commands\\index.html",
+      "title": "Production Commands | Mifty Framework",
+      "description": "Essential commands for building, deploying, and managing Mifty applications in production.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 90 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\contributing\\code-guidelines\\index.html",
+      "title": "Code Guidelines | Mifty Framework",
+      "description": "Coding standards and guidelines for Mifty development.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 54 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\contributing\\development-setup\\index.html",
+      "title": "Development Setup | Mifty Framework",
+      "description": "Setting up a development environment for contributing to Mifty.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 63 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\contributing\\release-process\\index.html",
+      "title": "Release Process | Mifty Framework",
+      "description": "Understanding the Mifty release process and versioning.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 55 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\contributing\\testing\\index.html",
+      "title": "Testing | Mifty Framework",
+      "description": "Testing guidelines and practices for Mifty.",
+      "score": 78,
+      "recommendations": [
+        "Title: Title too short: 25 chars (min: 30)",
+        "Description: Description too short: 43 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\database\\configuration\\index.html",
+      "title": "Database Configuration | Mifty Framework",
+      "description": "Mifty supports all major databases through Prisma ORM. You can easily switch between databases by simply changing the provider in your Prisma schema and updating your connection string - no code changes required!",
+      "score": 87,
+      "recommendations": [
+        "Description: Description too long: 212 chars (max: 160)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\database\\manual-schema\\index.html",
+      "title": "Manual Schema Editing | Mifty Framework",
+      "description": "For developers who prefer code-first approach or need advanced control, you can directly edit the src/db.design.ts file. This method provides more flexibility and is perfect for complex schemas, version control, and team collaboration.",
+      "score": 82,
+      "recommendations": [
+        "Description: Description should include primary keywords",
+        "Description: Description too long: 235 chars (max: 160)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\database\\migrations\\index.html",
+      "title": "Migrations and Schema Management | Mifty Framework",
+      "description": "Managing database migrations and schema changes in Mifty Framework.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 67 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\database\\visual-designer\\index.html",
+      "title": "Visual Database Designer | Mifty Framework",
+      "description": "Mifty's Visual Database Designer is a powerful drag-and-drop interface that lets you design your database schema without writing any code. It automatically generates Prisma schemas and keeps your db.design.ts file in sync.",
+      "score": 87,
+      "recommendations": [
+        "Description: Description too long: 222 chars (max: 160)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\framework\\architecture\\index.html",
+      "title": "Architecture Overview | Mifty Framework",
+      "description": "Mifty Framework follows a Clean Architecture pattern with Dependency Injection, providing a scalable, maintainable, and testable foundation for enterprise Node.js applications.",
+      "score": 87,
+      "recommendations": [
+        "Description: Description too long: 176 chars (max: 160)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\framework\\code-generation\\index.html",
+      "title": "Code Generation Capabilities | Mifty Framework",
+      "description": "Mifty's powerful code generation system automatically creates complete, production-ready modules from your database design. This eliminates hours of boilerplate coding and ensures consistent, high-quality code across your application.",
+      "score": 83,
+      "recommendations": [
+        "Description: Description too long: 234 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\framework\\configuration\\index.html",
+      "title": "Configuration | Mifty Framework",
+      "description": "Learn how to configure your Mifty application for different environments and use cases.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 87 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\framework\\development-workflow\\index.html",
+      "title": "Development Workflow | Mifty Framework",
+      "description": "Best practices and workflows for developing applications with the Mifty framework, from project setup to production deployment.",
+      "score": 95,
+      "recommendations": [
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\framework\\index.html",
+      "title": "Framework Guide | Mifty Framework",
+      "description": "Comprehensive guide to the Mifty Framework architecture, features, and development workflow.",
+      "score": 85,
+      "recommendations": [
+        "Description: Description too short: 92 chars (min: 120)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\framework\\project-structure\\index.html",
+      "title": "Project Structure & Configuration | Mifty Framework",
+      "description": "This guide explains the complete project structure of a Mifty application and how to configure various aspects of your project.",
+      "score": 95,
+      "recommendations": [
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\framework\\security\\index.html",
+      "title": "Security Guide | Mifty Framework",
+      "description": "Comprehensive security guide for Mifty applications covering authentication, authorization, data protection, and security best practices.",
+      "score": 92,
+      "recommendations": [
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\framework\\testing\\index.html",
+      "title": "Testing Framework | Mifty Framework",
+      "description": "Comprehensive testing guide for Mifty applications with built-in testing tools and best practices.",
+      "score": 85,
+      "recommendations": [
+        "Description: Description too short: 98 chars (min: 120)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\getting-started\\first-project\\index.html",
+      "title": "Your First Project | Mifty Framework",
+      "description": "Step-by-step tutorial to create your first Mifty application.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 61 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\getting-started\\installation\\index.html",
+      "title": "Installation Guide | Mifty Framework",
+      "description": "Complete step-by-step installation guide for Mifty CLI with prerequisites, verification, and troubleshooting.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 109 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\getting-started\\quick-start\\index.html",
+      "title": "Quick Start Tutorial | Mifty Framework",
+      "description": "Build your first Mifty API in 5 minutes - from project creation to testing your first endpoint.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 95 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\getting-started\\what-is-mifty\\index.html",
+      "title": "What is Mifty? | Mifty Framework",
+      "description": "Learn about Mifty, a modern Node.js TypeScript framework that revolutionizes backend development with visual database design and auto code generation.",
+      "score": 95,
+      "recommendations": [
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\intro\\index.html",
+      "title": "Welcome to Mifty Framework Documentation | Mifty Framework",
+      "description": "Welcome to the comprehensive documentation for Mifty Framework - the enterprise-grade Node.js TypeScript framework that revolutionizes backend development.",
+      "score": 92,
+      "recommendations": [
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\troubleshooting\\common-issues\\index.html",
+      "title": "Common Issues | Mifty Framework",
+      "description": "Solutions to common problems when using Mifty Framework.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 56 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\troubleshooting\\debugging-guide\\index.html",
+      "title": "Advanced Debugging Guide for Mifty Applications | Mifty Framework",
+      "description": "Master debugging techniques for Mifty applications, from basic console debugging to advanced profiling and production monitoring.",
+      "score": 90,
+      "recommendations": [
+        "Title: Title too long: 65 chars (max: 60)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\troubleshooting\\error-messages\\index.html",
+      "title": "Error Messages Reference | Mifty Framework",
+      "description": "Complete guide to understanding and resolving Mifty error messages.",
+      "score": 88,
+      "recommendations": [
+        "Description: Description too short: 67 chars (min: 120)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\troubleshooting\\index.html",
+      "title": "Troubleshooting Guide | Mifty Framework",
+      "description": "Complete troubleshooting resources for Mifty applications.",
+      "score": 85,
+      "recommendations": [
+        "Description: Description too short: 58 chars (min: 120)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\troubleshooting\\performance-optimization\\index.html",
+      "title": "Performance Optimization Guide for Mifty Applications | Mifty Framework",
+      "description": "Master performance optimization techniques to make your Mifty applications lightning-fast, from database queries to API responses and everything in between.",
+      "score": 90,
+      "recommendations": [
+        "Title: Title too long: 71 chars (max: 60)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\tutorials\\authentication-system\\index.html",
+      "title": "Building an Authentication System with Mifty | Mifty Framework",
+      "description": "Learn how to build a secure authentication system with JWT tokens, role-based access control, and user management using Mifty's built-in authentication features.",
+      "score": 82,
+      "recommendations": [
+        "Title: Title too long: 62 chars (max: 60)",
+        "Description: Description too long: 161 chars (max: 160)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\tutorials\\blog-api\\index.html",
+      "title": "Building a Blog API with Mifty | Mifty Framework",
+      "description": "Learn how to build a complete blog API from scratch using Mifty's visual database designer, auto-generation features, and authentication system. This tutorial covers everything from project setup to deployment.",
+      "score": 87,
+      "recommendations": [
+        "Description: Description too long: 210 chars (max: 160)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\tutorials\\ecommerce-backend\\index.html",
+      "title": "Building an E-commerce Backend with Mifty | Mifty Framework",
+      "description": "Learn how to build a complete e-commerce backend with payment processing, inventory management, order tracking, and real-time notifications using Mifty's powerful features.",
+      "score": 87,
+      "recommendations": [
+        "Description: Description too long: 172 chars (max: 160)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\tutorials\\file-upload-service\\index.html",
+      "title": "Building a File Upload Service with Mifty | Mifty Framework",
+      "description": "Learn how to build a comprehensive file upload service with multiple storage providers, image processing, security features, and progress tracking using Mifty's storage adapters.",
+      "score": 87,
+      "recommendations": [
+        "Description: Description too long: 178 chars (max: 160)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\tutorials\\realtime-features\\index.html",
+      "title": "Building Real-time Features with Mifty | Mifty Framework",
+      "description": "Learn how to add real-time functionality to your Mifty applications using WebSockets, including live chat, notifications, collaborative editing, and real-time dashboards.",
+      "score": 87,
+      "recommendations": [
+        "Description: Description too long: 170 chars (max: 160)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "docs\\tutorials\\testing-guide\\index.html",
+      "title": "Complete Testing Guide for Mifty Applications | Mifty Framework",
+      "description": "Learn how to implement comprehensive testing strategies for your Mifty applications, including unit tests, integration tests, end-to-end tests, and performance testing.",
+      "score": 78,
+      "recommendations": [
+        "Title: Title too long: 63 chars (max: 60)",
+        "Description: Description too long: 168 chars (max: 160)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    },
+    {
+      "path": "index.html",
+      "title": "Mifty Framework - Node.js TypeScript Framework | Mifty Framework for Node.js",
+      "description": "Build scalable modular backend applications with Mifty Framework. Enterprise-grade Node.js TypeScript framework with visual database designer.",
+      "score": 87,
+      "recommendations": [
+        "Title: Title too long: 76 chars (max: 60)",
+        "Meta: Missing structured data (JSON-LD)",
+        "Meta: Empty Canonical URL"
+      ]
+    }
+  ],
+  "commonIssues": [
+    {
+      "issue": "Meta",
+      "count": 105
+    },
+    {
+      "issue": "Description",
+      "count": 70
+    },
+    {
+      "issue": "Title",
+      "count": 8
+    }
+  ]
+}

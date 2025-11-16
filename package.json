@@ -19,7 +19,9 @@
     "deploy:github": "npm run build:optimized && gh-pages -d build",
     "deploy:netlify": "npm run build:optimized && netlify deploy --prod --dir=build",
     "deploy:vercel": "npm run build:optimized && vercel --prod",
-    "ci:test": "npm run typecheck && npm run build && npm run test:a11y",
+    "test:seo": "node scripts/seo-audit.js",
+    "test:seo:dev": "npm run build && npm run test:seo",
+    "ci:test": "npm run typecheck && npm run build && npm run test:a11y && npm run test:seo",
     "ci:deploy": "npm run ci:test && npm run deploy:github"
   },
   "dependencies": {
@@ -44,6 +46,7 @@
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^10.0.1",
+    "jsdom": "^23.0.0",
     "netlify-cli": "^17.0.0",
     "typescript": "~5.6.2",
     "vercel": "^32.0.0",

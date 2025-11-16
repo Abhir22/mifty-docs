@@ -51,27 +51,86 @@ const config: Config = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-          ignorePatterns: ['/tags/**'],
+          ignorePatterns: [
+            '/tags/**',
+            '/search/**',
+            '/404.html',
+            '**/_category_/**',
+            '**/category/**',
+            '/blog/tags/**',
+            '/blog/archive/**',
+            '/blog/authors/**',
+            '**/*.pdf',
+            '**/*.zip',
+            '**/*.tar.gz'
+          ],
           filename: 'sitemap.xml',
           createSitemapItems: async (params) => {
             const { defaultCreateSitemapItems, ...rest } = params;
             const items = await defaultCreateSitemapItems(rest);
             return items.map((item) => {
-              // Set higher priority for important pages
+              // Homepage: Highest priority, updated daily
+              if (item.url === '/' || item.url.endsWith('/')) {
+                return { ...item, priority: 1.0, changefreq: 'daily' };
+              }
+              
+              // Getting Started pages: Very high priority, updated weekly
               if (item.url.includes('/docs/getting-started/')) {
                 return { ...item, priority: 0.9, changefreq: 'weekly' };
               }
-              if (item.url.includes('/docs/framework/') || item.url.includes('/docs/api/')) {
+              
+              // Core Framework Documentation: High priority, updated weekly
+              if (item.url.includes('/docs/framework/')) {
                 return { ...item, priority: 0.8, changefreq: 'weekly' };
               }
-              if (item.url === '/' || item.url.includes('/docs/intro')) {
-                return { ...item, priority: 1.0, changefreq: 'weekly' };
+              
+              // API Documentation: High priority, updated weekly
+              if (item.url.includes('/docs/api/')) {
+                return { ...item, priority: 0.8, changefreq: 'weekly' };
               }
-              // Ensure homepage gets highest priority
-              if (item.url.endsWith('/')) {
-                return { ...item, priority: 1.0, changefreq: 'weekly' };
+              
+              // Tutorial pages: Medium-high priority, updated weekly
+              if (item.url.includes('/docs/tutorials/')) {
+                return { ...item, priority: 0.7, changefreq: 'weekly' };
               }
-              return { ...item, priority: 0.6, changefreq: 'monthly' };
+              
+              // Introduction page: Very high priority, updated weekly
+              if (item.url.includes('/docs/intro')) {
+                return { ...item, priority: 0.9, changefreq: 'weekly' };
+              }
+              
+              // Database documentation: High priority, updated weekly
+              if (item.url.includes('/docs/database/')) {
+                return { ...item, priority: 0.8, changefreq: 'weekly' };
+              }
+              
+              // Commands documentation: Medium-high priority, updated weekly
+              if (item.url.includes('/docs/commands/')) {
+                return { ...item, priority: 0.7, changefreq: 'weekly' };
+              }
+              
+              // Contributing and troubleshooting: Medium priority, updated monthly
+              if (item.url.includes('/docs/contributing/') || item.url.includes('/docs/troubleshooting/')) {
+                return { ...item, priority: 0.6, changefreq: 'monthly' };
+              }
+              
+              // Adapters documentation: Medium priority, updated monthly
+              if (item.url.includes('/docs/adapters/')) {
+                return { ...item, priority: 0.6, changefreq: 'monthly' };
+              }
+              
+              // All other documentation pages: Default medium priority, updated monthly
+              if (item.url.includes('/docs/')) {
+                return { ...item, priority: 0.6, changefreq: 'monthly' };
+              }
+              
+              // Blog posts: Medium priority, rarely updated after publication
+              if (item.url.includes('/blog/')) {
+                return { ...item, priority: 0.5, changefreq: 'yearly' };
+              }
+              
+              // Default for any other pages: Lower priority, updated monthly
+              return { ...item, priority: 0.4, changefreq: 'monthly' };
             });
           },
         },
@@ -239,41 +298,65 @@ const config: Config = {
       },
     ],
     metadata: [
-      // Primary keywords for core framework discovery
-      { name: 'keywords', content: 'mifty, mifty framework, mifty cli, nodejs framework, modular architecture, typescript backend framework, nodejs modular framework, prisma nodejs framework, nodejs clean architecture, enterprise nodejs framework' },
-      // Enhanced description with primary keywords
-      { name: 'description', content: 'Mifty Framework - Enterprise-Grade Node.js TypeScript Framework with Visual Database Designer & Auto Code Generation. Build scalable modular backend applications with Prisma integration and CLI tools.' },
+      // Comprehensive keyword strategy with primary, feature, comparison, and long-tail keywords
+      { 
+        name: 'keywords', 
+        content: 'mifty, mifty framework, mifty cli, nodejs framework, modular architecture, typescript backend framework, nodejs modular framework, prisma nodejs framework, nodejs clean architecture, enterprise nodejs framework, auto code generation, visual database designer, nestjs alternative, express alternative, nodejs modular architecture tutorial, typescript backend development, nodejs enterprise framework, backend framework typescript, modular nodejs development, prisma integration nodejs, nodejs framework comparison, typescript framework nodejs, backend development framework, nodejs api framework, microservices nodejs framework, scalable nodejs architecture, nodejs framework 2024, typescript web framework, nodejs backend boilerplate, enterprise backend framework' 
+      },
+      // Enhanced description with action-oriented language and primary keywords
+      { 
+        name: 'description', 
+        content: 'Discover Mifty Framework - the enterprise-grade Node.js TypeScript framework that accelerates backend development. Build scalable modular applications with visual database designer, auto code generation, and seamless Prisma integration. Start building robust APIs today.' 
+      },
       { name: 'author', content: 'Mifty Framework Team' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
       { name: 'theme-color', content: '#6366f1' },
       { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
       { name: 'googlebot', content: 'index, follow' },
       { name: 'bingbot', content: 'index, follow' },
-      // Open Graph metadata
+      // Enhanced Open Graph metadata with better descriptions
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Mifty Framework Documentation' },
-      { property: 'og:title', content: 'Mifty Framework - Enterprise Node.js TypeScript Framework' },
-      { property: 'og:description', content: 'Build scalable modular backend applications with Mifty Framework. Features visual database designer, auto code generation, and Prisma integration for Node.js TypeScript projects.' },
+      { property: 'og:title', content: 'Mifty Framework - Enterprise Node.js TypeScript Framework with Visual Database Designer' },
+      { property: 'og:description', content: 'Accelerate your backend development with Mifty Framework. Enterprise-grade Node.js TypeScript framework featuring visual database designer, auto code generation, and Prisma integration. Perfect NestJS and Express alternative for scalable applications.' },
       { property: 'og:image', content: 'https://mifty.dev/img/logo.png' },
-      { property: 'og:image:alt', content: 'Mifty Framework Logo - Node.js TypeScript Framework' },
+      { property: 'og:image:alt', content: 'Mifty Framework Logo - Enterprise Node.js TypeScript Framework with Visual Database Designer' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
       { property: 'og:url', content: 'https://mifty.dev' },
       { property: 'og:locale', content: 'en_US' },
-      // Twitter Card metadata
+      // Enhanced Twitter Card metadata with optimized descriptions
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@miftyframework' },
       { name: 'twitter:creator', content: '@miftyframework' },
       { name: 'twitter:title', content: 'Mifty Framework - Enterprise Node.js TypeScript Framework' },
-      { name: 'twitter:description', content: 'Build scalable modular backend applications with Mifty Framework. Visual database designer, auto code generation, and Prisma integration.' },
+      { name: 'twitter:description', content: 'Build scalable backend applications faster with Mifty Framework. Visual database designer, auto code generation, and Prisma integration for Node.js TypeScript projects. Try the modern NestJS alternative.' },
       { name: 'twitter:image', content: 'https://mifty.dev/img/logo.png' },
-      { name: 'twitter:image:alt', content: 'Mifty Framework Logo - Node.js TypeScript Framework' },
-      // Additional SEO metadata
+      { name: 'twitter:image:alt', content: 'Mifty Framework - Enterprise Node.js TypeScript Framework with Visual Database Designer' },
+      // Additional semantic keywords and metadata
       { name: 'application-name', content: 'Mifty Framework Documentation' },
       { name: 'apple-mobile-web-app-title', content: 'Mifty Framework' },
       { name: 'msapplication-TileColor', content: '#6366f1' },
       { name: 'msapplication-config', content: '/browserconfig.xml' },
-      // Structured data hints
+      // Enhanced structured data hints with semantic keywords
       { name: 'generator', content: 'Docusaurus' },
       { name: 'format-detection', content: 'telephone=no' },
+      // Additional semantic and technical SEO metadata
+      { name: 'category', content: 'Technology, Software Development, Backend Framework' },
+      { name: 'coverage', content: 'Worldwide' },
+      { name: 'distribution', content: 'Global' },
+      { name: 'rating', content: 'General' },
+      { name: 'revisit-after', content: '7 days' },
+      // Enhanced language and content metadata
+      { name: 'language', content: 'English' },
+      { name: 'content-language', content: 'en' },
+      { httpEquiv: 'content-language', content: 'en' },
+      // Additional Open Graph metadata for better social sharing
+      { property: 'og:image:type', content: 'image/png' },
+      { property: 'og:updated_time', content: new Date().toISOString() },
+      // Additional Twitter metadata
+      { name: 'twitter:domain', content: 'mifty.dev' },
+      { name: 'twitter:url', content: 'https://mifty.dev' },
     ],
     colorMode: {
       respectPrefersColorScheme: true,
