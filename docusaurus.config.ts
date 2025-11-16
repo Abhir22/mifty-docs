@@ -53,6 +53,27 @@ const config: Config = {
           priority: 0.5,
           ignorePatterns: ['/tags/**'],
           filename: 'sitemap.xml',
+          createSitemapItems: async (params) => {
+            const { defaultCreateSitemapItems, ...rest } = params;
+            const items = await defaultCreateSitemapItems(rest);
+            return items.map((item) => {
+              // Set higher priority for important pages
+              if (item.url.includes('/docs/getting-started/')) {
+                return { ...item, priority: 0.9, changefreq: 'weekly' };
+              }
+              if (item.url.includes('/docs/framework/') || item.url.includes('/docs/api/')) {
+                return { ...item, priority: 0.8, changefreq: 'weekly' };
+              }
+              if (item.url === '/' || item.url.includes('/docs/intro')) {
+                return { ...item, priority: 1.0, changefreq: 'weekly' };
+              }
+              // Ensure homepage gets highest priority
+              if (item.url.endsWith('/')) {
+                return { ...item, priority: 1.0, changefreq: 'weekly' };
+              }
+              return { ...item, priority: 0.6, changefreq: 'monthly' };
+            });
+          },
         },
       } satisfies Preset.Options,
     ],
@@ -150,16 +171,109 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/logo.png',
+    // Enhanced SEO configuration
+    headTags: [
+      // Canonical URL
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'canonical',
+          href: 'https://mifty.dev',
+        },
+      },
+      // DNS prefetch for performance
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'dns-prefetch',
+          href: '//fonts.googleapis.com',
+        },
+      },
+      // Preconnect for performance
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: 'anonymous',
+        },
+      },
+      // Structured data for software application
+      {
+        tagName: 'script',
+        attributes: {
+          type: 'application/ld+json',
+        },
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'SoftwareApplication',
+          name: 'Mifty Framework',
+          description: 'Enterprise-Grade Node.js TypeScript Framework with Visual Database Designer & Auto Code Generation',
+          applicationCategory: 'DeveloperApplication',
+          operatingSystem: 'Cross-platform',
+          programmingLanguage: ['TypeScript', 'JavaScript'],
+          runtimePlatform: 'Node.js',
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+          },
+          author: {
+            '@type': 'Organization',
+            name: 'Mifty Framework Team',
+          },
+          url: 'https://mifty.dev',
+          downloadUrl: 'https://www.npmjs.com/package/@mifty/cli',
+          softwareVersion: 'latest',
+          releaseNotes: 'https://mifty.dev/docs/getting-started/what-is-mifty',
+          screenshot: 'https://mifty.dev/img/logo.png',
+          featureList: [
+            'Visual Database Designer',
+            'Auto Code Generation',
+            'Modular Architecture',
+            'TypeScript Support',
+            'Prisma Integration',
+            'CLI Tools',
+          ],
+        }),
+      },
+    ],
     metadata: [
-      { name: 'keywords', content: 'mifty, framework, nodejs, typescript, database, api, documentation' },
-      { name: 'description', content: 'Enterprise-Grade Node.js TypeScript Framework with Visual Database Designer & Auto Code Generation' },
+      // Primary keywords for core framework discovery
+      { name: 'keywords', content: 'mifty, mifty framework, mifty cli, nodejs framework, modular architecture, typescript backend framework, nodejs modular framework, prisma nodejs framework, nodejs clean architecture, enterprise nodejs framework' },
+      // Enhanced description with primary keywords
+      { name: 'description', content: 'Mifty Framework - Enterprise-Grade Node.js TypeScript Framework with Visual Database Designer & Auto Code Generation. Build scalable modular backend applications with Prisma integration and CLI tools.' },
       { name: 'author', content: 'Mifty Framework Team' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
       { name: 'theme-color', content: '#6366f1' },
+      { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+      { name: 'googlebot', content: 'index, follow' },
+      { name: 'bingbot', content: 'index, follow' },
+      // Open Graph metadata
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Mifty Framework Documentation' },
+      { property: 'og:title', content: 'Mifty Framework - Enterprise Node.js TypeScript Framework' },
+      { property: 'og:description', content: 'Build scalable modular backend applications with Mifty Framework. Features visual database designer, auto code generation, and Prisma integration for Node.js TypeScript projects.' },
+      { property: 'og:image', content: 'https://mifty.dev/img/logo.png' },
+      { property: 'og:image:alt', content: 'Mifty Framework Logo - Node.js TypeScript Framework' },
+      { property: 'og:url', content: 'https://mifty.dev' },
+      { property: 'og:locale', content: 'en_US' },
+      // Twitter Card metadata
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@miftyframework' },
+      { name: 'twitter:creator', content: '@miftyframework' },
+      { name: 'twitter:title', content: 'Mifty Framework - Enterprise Node.js TypeScript Framework' },
+      { name: 'twitter:description', content: 'Build scalable modular backend applications with Mifty Framework. Visual database designer, auto code generation, and Prisma integration.' },
+      { name: 'twitter:image', content: 'https://mifty.dev/img/logo.png' },
+      { name: 'twitter:image:alt', content: 'Mifty Framework Logo - Node.js TypeScript Framework' },
+      // Additional SEO metadata
+      { name: 'application-name', content: 'Mifty Framework Documentation' },
+      { name: 'apple-mobile-web-app-title', content: 'Mifty Framework' },
+      { name: 'msapplication-TileColor', content: '#6366f1' },
+      { name: 'msapplication-config', content: '/browserconfig.xml' },
+      // Structured data hints
+      { name: 'generator', content: 'Docusaurus' },
+      { name: 'format-detection', content: 'telephone=no' },
     ],
     colorMode: {
       respectPrefersColorScheme: true,
@@ -188,13 +302,15 @@ const config: Config = {
         // },
         {
           href: 'https://www.npmjs.com/package/@mifty/cli',
-          label: 'NPM',
+          label: 'NPM Package',
           position: 'right',
+          'aria-label': 'Download Mifty CLI from NPM',
         },
         {
           href: 'https://github.com/abhir22/mifty-docs',
           label: 'GitHub',
           position: 'right',
+          'aria-label': 'View Mifty Framework source code on GitHub',
         },
       ],
     },
@@ -205,45 +321,45 @@ const config: Config = {
           title: 'Documentation',
           items: [
             {
-              label: 'Getting Started',
+              label: 'Getting Started with Mifty',
               to: '/docs/getting-started/what-is-mifty',
             },
             {
-              label: 'Framework Guide',
+              label: 'Framework Architecture Guide',
               to: '/docs/framework/architecture',
             },
             {
-              label: 'API Reference',
+              label: 'API Reference Documentation',
               to: '/docs/api/core-modules',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Community & Support',
           items: [
             {
-              label: 'GitHub Issues',
+              label: 'Report Issues & Bugs',
               href: 'https://github.com/abhir22/mifty-docs/issues',
             },
             {
-              label: 'GitHub Discussions',
+              label: 'Community Discussions',
               href: 'https://github.com/abhir22/mifty-docs/discussions',
             },
             {
-              label: 'Stack Overflow',
+              label: 'Stack Overflow Help',
               href: 'https://stackoverflow.com/questions/tagged/mifty',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Resources',
           items: [
             {
-              label: 'NPM Package',
+              label: 'Download Mifty CLI',
               href: 'https://www.npmjs.com/package/@mifty/cli',
             },
             {
-              label: 'GitHub',
+              label: 'Source Code on GitHub',
               href: 'https://github.com/abhir22/mifty-docs',
             },
           ],

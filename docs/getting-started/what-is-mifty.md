@@ -6,6 +6,10 @@ keywords: [mifty, nodejs, typescript, framework, database designer, code generat
 ---
 
 import ComparisonTable, { ComparisonRow } from '@site/src/components/ComparisonTable';
+import RelatedDocs from '@site/src/components/RelatedDocs';
+import Breadcrumbs from '@site/src/components/Breadcrumbs';
+
+<Breadcrumbs />
 
 # What is Mifty?
 
@@ -261,3 +265,29 @@ Ready to experience 10x faster backend development?
 4. **[Code Generation](../framework/code-generation)** - Understand auto-generation
 5. **[Adapters](../adapters/)** - Add third-party integrations
 6. **[Tutorials](../tutorials/blog-api)** - Build real-world applications
+
+<RelatedDocs
+  title="Essential Next Steps"
+  docs={[
+    {
+      title: "Installation Guide",
+      to: "/docs/getting-started/installation",
+      description: "Set up Mifty CLI and create your first project in minutes"
+    },
+    {
+      title: "Quick Start Tutorial",
+      to: "/docs/getting-started/quick-start", 
+      description: "Build a complete API with visual database design and auto-generation"
+    },
+    {
+      title: "Framework Architecture",
+      to: "/docs/framework/architecture",
+      description: "Understand Mifty's clean architecture and design patterns"
+    },
+    {
+      title: "Visual Database Designer",
+      to: "/docs/database/visual-designer",
+      description: "Master the drag-and-drop database design interface"
+    }
+  ]}
+/>
