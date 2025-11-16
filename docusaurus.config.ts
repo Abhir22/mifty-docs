@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Mifty Framework',
   tagline: 'Enterprise-Grade Node.js TypeScript Framework with Visual Database Designer & Auto Code Generation',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon-32x32.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -48,21 +48,6 @@ const config: Config = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/abhir22/mifty/tree/main/docs/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -77,6 +62,8 @@ const config: Config = {
   ],
 
   plugins: [
+    // Local search plugin
+    'docusaurus-lunr-search',
     // Analytics plugins
     [
       '@docusaurus/plugin-google-gtag',
@@ -105,7 +92,7 @@ const config: Config = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: '/img/logo.png',
+            href: '/img/favicon-32x32.png',
           },
           {
             tagName: 'link',
@@ -130,18 +117,12 @@ const config: Config = {
           {
             tagName: 'link',
             rel: 'apple-touch-icon',
-            href: '/img/logo.png',
-          },
-          {
-            tagName: 'link',
-            rel: 'mask-icon',
-            href: '/img/logo.svg',
-            color: '#6366f1',
+            href: '/img/apple-touch-icon.png',
           },
           {
             tagName: 'meta',
             name: 'msapplication-TileImage',
-            content: '/img/logo.png',
+            content: '/img/android-chrome-192x192.png',
           },
           {
             tagName: 'meta',
@@ -164,7 +145,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo.png',
     metadata: [
       {name: 'keywords', content: 'mifty, framework, nodejs, typescript, database, api, documentation'},
       {name: 'description', content: 'Enterprise-Grade Node.js TypeScript Framework with Visual Database Designer & Auto Code Generation'},
@@ -185,7 +166,8 @@ const config: Config = {
       title: 'Mifty',
       logo: {
         alt: 'Mifty Framework Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
+        srcDark: 'img/logo.png',
       },
       items: [
         {
@@ -200,7 +182,6 @@ const config: Config = {
           position: 'left',
           label: 'API',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://www.npmjs.com/package/@mifty/cli',
           label: 'NPM',
@@ -261,70 +242,17 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/abhir22/mifty',
             },
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Mifty Framework. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Mifty Framework.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['bash', 'json', 'typescript', 'javascript', 'sql', 'yaml'],
     },
-    algolia: {
-      // The application ID provided by Algolia
-      appId: process.env.ALGOLIA_APP_ID || 'BH4D9OD16A',
-      // Public API key: it is safe to commit it
-      apiKey: process.env.ALGOLIA_SEARCH_API_KEY || '3c6db5c24d0e6ad9c2f49d7a4c5b8e9f',
-      indexName: 'mifty-docs',
-      // Optional: see doc section below
-      contextualSearch: true,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push
-      externalUrlRegex: 'external\\.com|domain\\.com',
-      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl
-      replaceSearchResultPathname: {
-        from: '/docs/', // or as RegExp: /\/docs\//
-        to: '/',
-      },
-      // Optional: Algolia search parameters
-      searchParameters: {
-        facetFilters: ['type:content'],
-        hitsPerPage: 10,
-        attributesToRetrieve: [
-          'hierarchy.lvl0',
-          'hierarchy.lvl1',
-          'hierarchy.lvl2',
-          'hierarchy.lvl3',
-          'hierarchy.lvl4',
-          'hierarchy.lvl5',
-          'hierarchy.lvl6',
-          'content',
-          'type',
-          'url',
-        ],
-        attributesToHighlight: [
-          'hierarchy.lvl0',
-          'hierarchy.lvl1',
-          'hierarchy.lvl2',
-          'hierarchy.lvl3',
-          'hierarchy.lvl4',
-          'hierarchy.lvl5',
-          'hierarchy.lvl6',
-          'content',
-        ],
-        attributesToSnippet: ['content:10'],
-        highlightPreTag: '<mark>',
-        highlightPostTag: '</mark>',
-      },
-      // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: 'search',
-      // Optional: insights
-      insights: true,
-    },
+
     docs: {
       sidebar: {
         hideable: true,

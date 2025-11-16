@@ -13,7 +13,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "test:search": "node scripts/test-search.js",
+
     "test:navigation": "node scripts/test-navigation.js",
     "build:optimized": "node scripts/deploy.js",
     "test:performance": "node scripts/performance-test.js",
@@ -27,35 +27,32 @@
     "ci:deploy": "npm run ci:test && npm run deploy:github"
   },
   "dependencies": {
-    "@docsearch/css": "^3.5.2",
-    "@docsearch/react": "^3.5.2",
     "@docusaurus/core": "3.9.2",
     "@docusaurus/preset-classic": "3.9.2",
-    "@docusaurus/theme-search-algolia": "3.9.2",
     "@mdx-js/react": "^3.0.0",
-    "algoliasearch": "^4.20.0",
     "clsx": "^2.0.0",
+    "docusaurus-lunr-search": "^3.6.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@axe-core/cli": "^4.8.0",
     "@docusaurus/module-type-aliases": "3.9.2",
     "@docusaurus/plugin-pwa": "^3.9.2",
     "@docusaurus/tsconfig": "3.9.2",
     "@docusaurus/types": "3.9.2",
     "@lhci/cli": "^0.12.0",
-    "@axe-core/cli": "^4.8.0",
-    "puppeteer": "^21.0.0",
-    "webpack-bundle-analyzer": "^4.9.0",
     "gh-pages": "^6.0.0",
-    "netlify-cli": "^17.0.0",
-    "vercel": "^32.0.0",
     "imagemin": "^8.0.1",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^10.0.1",
-    "typescript": "~5.6.2"
+    "netlify-cli": "^17.0.0",
+    "puppeteer": "^21.0.0",
+    "typescript": "~5.6.2",
+    "vercel": "^32.0.0",
+    "webpack-bundle-analyzer": "^4.9.0"
   },
   "browserslist": {
     "production": [

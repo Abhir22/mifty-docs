@@ -72,6 +72,13 @@
   font-size: 1.25rem;
 }
 
+/* Ensure navbar logo displays correctly */
+.navbar__logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
 .navbar__title {
   background: var(--mifty-gradient);
   -webkit-background-clip: text;

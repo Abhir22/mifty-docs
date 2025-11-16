@@ -1,0 +1,36 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="codeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Code editor window -->
+  <rect x="30" y="40" width="140" height="120" rx="8" fill="url(#codeGradient)" opacity="0.1" stroke="url(#codeGradient)" stroke-width="2"/>
+  
+  <!-- Window header -->
+  <rect x="30" y="40" width="140" height="25" rx="8" fill="url(#codeGradient)" opacity="0.3"/>
+  <circle cx="45" cy="52" r="3" fill="#ff5f56"/>
+  <circle cx="55" cy="52" r="3" fill="#ffbd2e"/>
+  <circle cx="65" cy="52" r="3" fill="#27ca3f"/>
+  
+  <!-- Code lines -->
+  <rect x="40" y="75" width="80" height="3" fill="url(#codeGradient)" opacity="0.8"/>
+  <rect x="50" y="85" width="60" height="3" fill="url(#codeGradient)" opacity="0.6"/>
+  <rect x="40" y="95" width="90" height="3" fill="url(#codeGradient)" opacity="0.8"/>
+  <rect x="50" y="105" width="70" height="3" fill="url(#codeGradient)" opacity="0.6"/>
+  <rect x="40" y="115" width="85" height="3" fill="url(#codeGradient)" opacity="0.8"/>
+  <rect x="50" y="125" width="65" height="3" fill="url(#codeGradient)" opacity="0.6"/>
+  <rect x="40" y="135" width="75" height="3" fill="url(#codeGradient)" opacity="0.8"/>
+  
+  <!-- Magic wand/generation symbol -->
+  <path d="M140 80 L160 60 L165 65 L145 85 Z" fill="#ffd700" opacity="0.9"/>
+  <circle cx="162" cy="62" r="2" fill="#ffd700"/>
+  <path d="M155 55 L157 53 M159 57 L161 55 M153 59 L155 57" stroke="#ffd700" stroke-width="1"/>
+  
+  <!-- Generated files -->
+  <rect x="120" y="100" width="25" height="30" fill="url(#codeGradient)" opacity="0.7" rx="2"/>
+  <rect x="130" y="110" width="25" height="30" fill="url(#codeGradient)" opacity="0.8" rx="2"/>
+  <rect x="140" y="120" width="25" height="30" fill="url(#codeGradient)" opacity="0.9" rx="2"/>
+</svg>

@@ -11,7 +11,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Visual Database Designer',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/database-icon.svg').default,
     description: (
       <>
         Design your database schema with an intuitive drag-and-drop interface.
@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Auto Code Generation',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/code-generation-icon.svg').default,
     description: (
       <>
         Generate complete CRUD modules, API routes, tests, and documentation
@@ -31,7 +31,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Clean Architecture',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/architecture-icon.svg').default,
     description: (
       <>
         Built on clean architecture principles with dependency injection,

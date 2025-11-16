@@ -1,0 +1,45 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="archGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Architecture layers -->
+  <!-- Presentation Layer -->
+  <rect x="40" y="40" width="120" height="25" rx="4" fill="url(#archGradient)" opacity="0.9"/>
+  <text x="100" y="57" text-anchor="middle" fill="white" font-size="10" font-family="Arial">Presentation</text>
+  
+  <!-- Business Layer -->
+  <rect x="50" y="80" width="100" height="25" rx="4" fill="url(#archGradient)" opacity="0.8"/>
+  <text x="100" y="97" text-anchor="middle" fill="white" font-size="10" font-family="Arial">Business Logic</text>
+  
+  <!-- Data Layer -->
+  <rect x="60" y="120" width="80" height="25" rx="4" fill="url(#archGradient)" opacity="0.7"/>
+  <text x="100" y="137" text-anchor="middle" fill="white" font-size="10" font-family="Arial">Data Access</text>
+  
+  <!-- Database -->
+  <ellipse cx="100" cy="165" rx="30" ry="8" fill="url(#archGradient)" opacity="0.6"/>
+  <rect x="70" y="165" width="60" height="15" fill="url(#archGradient)" opacity="0.6"/>
+  <ellipse cx="100" cy="180" rx="30" ry="8" fill="url(#archGradient)" opacity="0.8"/>
+  
+  <!-- Connection arrows -->
+  <path d="M100 65 L100 75" stroke="url(#archGradient)" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M100 105 L100 115" stroke="url(#archGradient)" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M100 145 L100 155" stroke="url(#archGradient)" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="url(#archGradient)"/>
+    </marker>
+  </defs>
+  
+  <!-- Dependency injection symbols -->
+  <circle cx="30" cy="90" r="8" fill="#f093fb" opacity="0.8"/>
+  <text x="30" y="95" text-anchor="middle" fill="white" font-size="8" font-family="Arial">DI</text>
+  
+  <circle cx="170" cy="90" r="8" fill="#4facfe" opacity="0.8"/>
+  <text x="170" y="95" text-anchor="middle" fill="white" font-size="8" font-family="Arial">IoC</text>
+</svg>
