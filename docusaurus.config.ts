@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
+4
 const config: Config = {
   title: 'Mifty Framework',
   tagline: 'Enterprise-Grade Node.js TypeScript Framework with Visual Database Designer & Auto Code Generation',
@@ -73,62 +73,62 @@ const config: Config = {
               if (item.url === '/' || item.url.endsWith('/')) {
                 return { ...item, priority: 1.0, changefreq: 'daily' };
               }
-              
+
               // Getting Started pages: Very high priority, updated weekly
               if (item.url.includes('/docs/getting-started/')) {
                 return { ...item, priority: 0.9, changefreq: 'weekly' };
               }
-              
+
               // Core Framework Documentation: High priority, updated weekly
               if (item.url.includes('/docs/framework/')) {
                 return { ...item, priority: 0.8, changefreq: 'weekly' };
               }
-              
+
               // API Documentation: High priority, updated weekly
               if (item.url.includes('/docs/api/')) {
                 return { ...item, priority: 0.8, changefreq: 'weekly' };
               }
-              
+
               // Tutorial pages: Medium-high priority, updated weekly
               if (item.url.includes('/docs/tutorials/')) {
                 return { ...item, priority: 0.7, changefreq: 'weekly' };
               }
-              
+
               // Introduction page: Very high priority, updated weekly
               if (item.url.includes('/docs/intro')) {
                 return { ...item, priority: 0.9, changefreq: 'weekly' };
               }
-              
+
               // Database documentation: High priority, updated weekly
               if (item.url.includes('/docs/database/')) {
                 return { ...item, priority: 0.8, changefreq: 'weekly' };
               }
-              
+
               // Commands documentation: Medium-high priority, updated weekly
               if (item.url.includes('/docs/commands/')) {
                 return { ...item, priority: 0.7, changefreq: 'weekly' };
               }
-              
+
               // Contributing and troubleshooting: Medium priority, updated monthly
               if (item.url.includes('/docs/contributing/') || item.url.includes('/docs/troubleshooting/')) {
                 return { ...item, priority: 0.6, changefreq: 'monthly' };
               }
-              
+
               // Adapters documentation: Medium priority, updated monthly
               if (item.url.includes('/docs/adapters/')) {
                 return { ...item, priority: 0.6, changefreq: 'monthly' };
               }
-              
+
               // All other documentation pages: Default medium priority, updated monthly
               if (item.url.includes('/docs/')) {
                 return { ...item, priority: 0.6, changefreq: 'monthly' };
               }
-              
+
               // Blog posts: Medium priority, rarely updated after publication
               if (item.url.includes('/blog/')) {
                 return { ...item, priority: 0.5, changefreq: 'yearly' };
               }
-              
+
               // Default for any other pages: Lower priority, updated monthly
               return { ...item, priority: 0.4, changefreq: 'monthly' };
             });
@@ -139,8 +139,50 @@ const config: Config = {
   ],
 
   plugins: [
-    // Local search plugin
-    'docusaurus-lunr-search',
+    // Enhanced local search plugin with better configuration
+    [require.resolve('docusaurus-lunr-search'), {
+      languages: ['en'],
+      indexBaseUrl: true,
+      includeRoutes: [
+        '/docs/**',
+        '/',
+        '/blog/**'
+      ],
+      excludeRoutes: [
+        '/search/**',
+        '/404.html',
+        '**/_category_/**',
+        '**/category/**',
+        '/blog/tags/**',
+        '/blog/archive/**',
+        '/blog/authors/**'
+      ],
+      maxHits: 10,
+      lunrSearchOptions: {
+        // Boost title matches for better relevance
+        boosts: {
+          title: 20,
+          keywords: 15,
+          tags: 10,
+          content: 1
+        },
+        // Enable fuzzy matching for typos (0-2, where 2 allows more typos)
+        fuzzy: 1,
+        // Expand search terms for better matching
+        expand: true,
+        // Minimum character length for search
+        minSearchLength: 2,
+        // Maximum number of search results
+        maxSearchResults: 12
+      },
+      // Custom search placeholder
+      searchBarPlaceholder: 'Search docs, API, guides...',
+      // Enable search result highlighting
+      highlightSearchTermsOnTargetPage: true,
+      // Custom search result display
+      searchResultLimits: 8,
+      searchResultContextMaxLength: 100
+    }],
     // Analytics plugins - disabled until proper IDs are configured
     // [
     //   '@docusaurus/plugin-google-gtag',
@@ -299,14 +341,14 @@ const config: Config = {
     ],
     metadata: [
       // Comprehensive keyword strategy with primary, feature, comparison, and long-tail keywords
-      { 
-        name: 'keywords', 
-        content: 'mifty, mifty framework, mifty cli, nodejs framework, modular architecture, typescript backend framework, nodejs modular framework, prisma nodejs framework, nodejs clean architecture, enterprise nodejs framework, auto code generation, visual database designer, nestjs alternative, express alternative, nodejs modular architecture tutorial, typescript backend development, nodejs enterprise framework, backend framework typescript, modular nodejs development, prisma integration nodejs, nodejs framework comparison, typescript framework nodejs, backend development framework, nodejs api framework, microservices nodejs framework, scalable nodejs architecture, nodejs framework 2024, typescript web framework, nodejs backend boilerplate, enterprise backend framework' 
+      {
+        name: 'keywords',
+        content: 'mifty, mifty framework, mifty cli, nodejs framework, modular architecture, typescript backend framework, nodejs modular framework, prisma nodejs framework, nodejs clean architecture, enterprise nodejs framework, auto code generation, visual database designer, nestjs alternative, express alternative, nodejs modular architecture tutorial, typescript backend development, nodejs enterprise framework, backend framework typescript, modular nodejs development, prisma integration nodejs, nodejs framework comparison, typescript framework nodejs, backend development framework, nodejs api framework, microservices nodejs framework, scalable nodejs architecture, nodejs framework 2024, typescript web framework, nodejs backend boilerplate, enterprise backend framework'
       },
       // Enhanced description with action-oriented language and primary keywords
-      { 
-        name: 'description', 
-        content: 'Discover Mifty Framework - the enterprise-grade Node.js TypeScript framework that accelerates backend development. Build scalable modular applications with visual database designer, auto code generation, and seamless Prisma integration. Start building robust APIs today.' 
+      {
+        name: 'description',
+        content: 'Discover Mifty Framework - the enterprise-grade Node.js TypeScript framework that accelerates backend development. Build scalable modular applications with visual database designer, auto code generation, and seamless Prisma integration. Start building robust APIs today.'
       },
       { name: 'author', content: 'Mifty Framework Team' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
@@ -369,7 +411,10 @@ const config: Config = {
         alt: 'Mifty Framework Logo',
         src: 'img/logo.png',
         srcDark: 'img/logo.png',
+        width: 32,
+        height: 32,
       },
+      hideOnScroll: false,
       items: [
         {
           type: 'docSidebar',
